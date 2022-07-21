@@ -45,16 +45,27 @@ We have two suggestions for achieving this type of motion:
 
 ![](images/BrianMechanismConcept1Graphs.svg) 
 
+![](images/BrianMechanismIntermittentMotionWheelCenterPos.svg) 
+
+![](images/BrianMechanismIntermittentMotion.svg) 
+
+
 While this concept works in theory, it has the following drawbacks:
 - The payload can only achiveve intermittent motion. Once the payload reaches the end of the frame carried by the wheels, it has to turn back and move back to the beginning of the frame. This happens as the wheel is turning. During this time, the payload does not move relative to the ground. 
 - It is not energy efficient. The payload vertically during the turning of the wheel. Although this can be eliminated by putting the payload on a frame whose vertical position can be controlled to eliminate this, it increases the complexity of the system.
 
 Notice that the motion of this type of wheel can be achieved by the a wheel that has spoked from the center of the wheel to the `n
-` edges vertices. This is shown by the drawing below:
+` edges vertices. This is shown by the diagram below:
 
-![]()
+![](images/BrianMechanismIntermittentMotionOnSpokes.svg) 
 
 2. Two Backflipping frames
+
+![](images/BrianMechanismContinuous%20Motion.PNG)
+
+
+![](images/BrianMechanismContinuous%20Motion-1.PNG)
+
 This system has two frames. In the beginning, one is upside down on top of the other. The lower frame is stationary. A pivot is formed on the right side of the frames to hold the upper frame to the lower frame and to allow the upper frame to turn about that point. As the payload moves, the upper frame turns 180° until it is right side up on the ground and when the payload goes beyond the workspace of the first frame, it gets into that of this second frame and is carried by it. About the same pivot, frame 1 turns 180° so that it lies upside down on top of frame 2. The pivot is now moved to the right side of the frames since the backflip has moved it to the left. The sequence continues so that frame 1 and frame 2 are alternately stationary and carrying the payload, one in front of the other and one on top of the other.
 
 While this system is practical, if has the disadvantages of:
@@ -73,7 +84,6 @@ Our proprietary design solves these challenges.
 It has features the desirable features:
 1. Uses the actuator that drives the payload to move the wheel forward, thus reducing the cost.
 2. Has the efficiency of a wheel.
-
 
 Brian Mechanism as a wheel reinvented turns a fixed robot into a precision compound robot thereby turning a small scale fixed robot into a large scale robot with sufficient precision for use in agricultural applications.
 
