@@ -1,0 +1,259 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9845,        251]
+NotebookOptionsPosition[      8146,        213]
+NotebookOutlinePosition[      8479,        228]
+CellTagsIndexPosition[      8436,        225]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"RunProcess", "[", "\"\<date\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7819308717985973`*^9, 3.78193087179937*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"0cd73623-7f76-4298-9314-18da9dfaaa37"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ExitCode\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"StandardOutput\"\>", 
+    "\[Rule]", "\<\"Tue  5 Nov 11:21:13 EAT 2019\\n\"\>"}], ",", 
+   RowBox[{"\<\"StandardError\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.781930873932309*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"1f590c64-b13a-4409-a178-2cac4789f491"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RunProcess", "[", "\"\<date\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.781930877861215*^9, 3.781930877862252*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"3f7bf13e-2344-45c4-b527-3bf78150fd33"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ExitCode\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"StandardOutput\"\>", 
+    "\[Rule]", "\<\"Tue  5 Nov 11:21:18 EAT 2019\\n\"\>"}], ",", 
+   RowBox[{"\<\"StandardError\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.781930878169176*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"99c4b520-6f68-4285-8dbd-81c1b5b2156d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RunProcess", "[", "\"\<date\>\"", "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.78193087989396*^9, 3.781930900499784*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"30396f0b-a295-4bbf-b8cb-cf2518a0a752"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ExitCode\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"StandardOutput\"\>", 
+    "\[Rule]", "\<\"Tue  5 Nov 11:22:00 EAT 2019\\n\"\>"}], ",", 
+   RowBox[{"\<\"StandardError\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.781930880109253*^9, 3.7819309206816072`*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"51b349a5-9fa2-40a8-b21b-6080e0b0e575"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RunProcess", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<mosquitto_pub\>\"", ",", " ", "\"\<-h mosquitto.upande-iot.co.ke\>\"",
+     ",", "\"\< -p 1883\>\"", ",", " ", "\"\<-t 'in'\>\"", ",", " ", 
+    "\"\<-m 0399\>\"", ",", " ", "\"\<-u 'v***'\>\"", ",", " ", 
+    "\"\<-P 'u-g***'\>\""}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7819309236676826`*^9, 3.781930923669302*^9}, {
+  3.781930966629548*^9, 3.781931015914936*^9}, {3.78193115342202*^9, 
+  3.781931249745902*^9}, {3.867659686168437*^9, 
+  3.867659701412897*^9}},ExpressionUUID->"cd827de1-4360-4dd6-9b2a-\
+6932e5cf2446"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ExitCode\"\>", "\[Rule]", "1"}], ",", 
+   RowBox[{"\<\"StandardOutput\"\>", "\[Rule]", "\<\"\"\>"}], ",", 
+   RowBox[{"\<\"StandardError\"\>", 
+    "\[Rule]", "\<\"Error: Unknown option '-h mosquitto.upande-iot.co.ke'.\\n\
+\\nUse 'mosquitto_pub --help' to see usage.\\n\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.781931215141417*^9, 3.781931251982489*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"0b41b322-dc5c-4c0d-bae0-a13ba907a5be"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mycommand", "=", "\"\<mosquitto_pub\>\""}], ",", " ", 
+  "\"\<-h mosquitto.upande-iot.co.ke\>\"", ",", "\"\< -p 1883\>\"", ",", " ", 
+  "\"\<-t 'in'\>\"", ",", " ", "\"\<-m 0399\>\"", ",", " ", 
+  "\"\<-u 'v***'\>\"", ",", " ", 
+  "\"\<-P 'u-g***\>\""}], "\[IndentingNewLine]", 
+ RowBox[{"RunProcess", "[", 
+  RowBox[{"StringSplit", "@", "mycommand"}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.781931336514627*^9, 3.78193136593505*^9}, {
+   3.7819314270149107`*^9, 3.781931432955284*^9}, {3.7819315423452578`*^9, 
+   3.7819315537283783`*^9}, 3.8676597176246767`*^9},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"29225b21-0417-4a38-8f84-2671fd5f1279"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Syntax","tsntxi",
+   "\"\\\"\\!\\(\\*RowBox[{RowBox[{\\\"mycommand\\\", \\\"=\\\", \
+\\\"\\\\\\\"mosquitto_pub\\\\\\\"\\\"}], \\\",\\\", \\\"\\\\\\\"-h \
+mosquitto.upande-iot.co.ke\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" -p 1883\\\\\\\
+\"\\\", \\\",\\\", \\\"\\\\\\\"-t 'in'\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"-m \
+0399\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"-u 'v***'\\\\\\\"\\\", \\\",\\\", \\\
+\"\\\\\\\"-P 'u-g***\\\\\\\"\\\"}]\\)\\\" is incomplete; more input is \
+needed.\\!\\(\\*RowBox[{\\\"\\\\\\\"\\\\\\\"\\\"}]\\)\"",2,1,2,
+   26363041928357251894,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.867659908363186*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"357c0b58-85e8-4c7f-ab97-d4093631382a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"mycommand1", "=", 
+  "\"\<mosquitto_sub -h mosquitto.upande-iot.co.ke -p 1883 -t '#' -u v*** -P \
+u-g***\>\""}], "\[IndentingNewLine]", 
+ RowBox[{"Delayed", "[", 
+  RowBox[{"RunProcess", "[", 
+   RowBox[{"StringSplit", "@", "mycommand"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.781931565327299*^9, 3.781931613368301*^9}, {
+  3.867659730489003*^9, 3.867659817007148*^9}, {3.867659881827382*^9, 
+  3.867659889467886*^9}, {3.867659920371296*^9, 3.8676599208645973`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"fe036b74-9a24-4821-942d-e5d9fadee66d"],
+
+Cell[BoxData["\<\"mosquitto_sub -h mosquitto.upande-iot.co.ke -p 1883 -t '#' \
+-u v*** -P u-g***\"\>"], "Output",
+ CellChangeTimes->{3.781931614417562*^9, 3.8676599217904863`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"2761b1d3-9417-42a8-89fe-1568246385b6"],
+
+Cell[BoxData[
+ RowBox[{"Delayed", "[", 
+  RowBox[{"RunProcess", "[", 
+   RowBox[{"StringSplit", "[", "mycommand", "]"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.781931614417562*^9, 3.867659933072356*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"f53a5614-4c3c-40c7-97b3-64534bcc8c4d"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"qRunTask", "=", 
+   RowBox[{"CreateScheduledTask", "[", 
+    RowBox[{"Parallel`Developer`QueueRun", "[", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"StartScheduledTask", "[", "qRunTask", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ClearAll", "[", "AsynchronousEvaluate", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SetAttributes", "[", 
+   RowBox[{"AsynchronousEvaluate", ",", "HoldAll"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AsynchronousEvaluate", "[", "exp_", "]"}], ":=", 
+  RowBox[{"DynamicModule", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"eval", ",", "display"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"display", "=", 
+      RowBox[{"eval", "=", 
+       RowBox[{"ParallelSubmit", "[", "exp", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Dynamic", "[", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"MatchQ", "[", 
+          RowBox[{
+           RowBox[{"eval", "[", 
+            RowBox[{"[", "4", "]"}], "]"}], ",", 
+           RowBox[{"Parallel`Developer`finished", "[", "_", "]"}]}], "]"}], 
+         ",", 
+         RowBox[{"display", "=", 
+          RowBox[{
+           RowBox[{"eval", "[", 
+            RowBox[{"[", "4", "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}], ";", "display"}], 
+      "]"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.781931702793222*^9, 3.7819317112163067`*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"f3d4d07e-8bc0-469a-93b2-8026531f5a16"]
+},
+WindowSize->{1528, 836},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 219, 3, 31, "Input",ExpressionUUID->"0cd73623-7f76-4298-9314-18da9dfaaa37"],
+Cell[802, 27, 437, 9, 59, "Output",ExpressionUUID->"1f590c64-b13a-4409-a178-2cac4789f491"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1276, 41, 218, 3, 31, "Input",ExpressionUUID->"3f7bf13e-2344-45c4-b527-3bf78150fd33"],
+Cell[1497, 46, 437, 9, 59, "Output",ExpressionUUID->"99c4b520-6f68-4285-8dbd-81c1b5b2156d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1971, 60, 280, 5, 78, "Input",ExpressionUUID->"30396f0b-a295-4bbf-b8cb-cf2518a0a752"],
+Cell[2254, 67, 464, 9, 59, "Output",ExpressionUUID->"51b349a5-9fa2-40a8-b21b-6080e0b0e575"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2755, 81, 608, 12, 31, "Input",ExpressionUUID->"cd827de1-4360-4dd6-9b2a-6932e5cf2446"],
+Cell[3366, 95, 534, 10, 105, "Output",ExpressionUUID->"0b41b322-dc5c-4c0d-bae0-a13ba907a5be"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3937, 110, 715, 13, 78, "Input",ExpressionUUID->"29225b21-0417-4a38-8f84-2671fd5f1279"],
+Cell[4655, 125, 781, 15, 23, "Message",ExpressionUUID->"357c0b58-85e8-4c7f-ab97-d4093631382a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5473, 145, 578, 10, 55, "Input",ExpressionUUID->"fe036b74-9a24-4821-942d-e5d9fadee66d"],
+Cell[6054, 157, 257, 3, 35, "Output",ExpressionUUID->"2761b1d3-9417-42a8-89fe-1568246385b6"],
+Cell[6314, 162, 287, 5, 35, "Output",ExpressionUUID->"f53a5614-4c3c-40c7-97b3-64534bcc8c4d"]
+}, Open  ]],
+Cell[6616, 170, 1526, 41, 170, "Input",ExpressionUUID->"f3d4d07e-8bc0-469a-93b2-8026531f5a16"]
+}
+]
+*)
+

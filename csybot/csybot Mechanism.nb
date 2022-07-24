@@ -1,0 +1,1246 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     48999,       1238]
+NotebookOptionsPosition[     47664,       1206]
+NotebookOutlinePosition[     48005,       1221]
+CellTagsIndexPosition[     47962,       1218]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g1", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"0.6", ",", "1", ",", "0.6"}], "]"}], ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "dis"}], ",", "0.2", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "dis"}], ",", "0.6", ",", "0"}], "}"}]}], "}"}], 
+         ",", "1.3"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"g2", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"0.6", ",", "1", ",", "0.6"}], "]"}], ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"dis", ",", "0.2", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"dis", ",", "0.6", ",", "0"}], "}"}]}], "}"}], ",", 
+         "1.3"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"z", "=", " ", 
+     RowBox[{"Cos", "[", "a", "]"}]}], ";", 
+    RowBox[{"x", "=", " ", 
+     RowBox[{"Sin", "[", "a", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"zz", "=", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"b", "^", "2"}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"dis", "+", "x"}], ")"}], "^", "2"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"vA", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dis", "+", "x"}], ",", "0", ",", "z"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"vB", "=", 
+     RowBox[{"{", 
+      RowBox[{"base", ",", "0", ",", 
+       RowBox[{"zz", "+", "z"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vC", "=", 
+     RowBox[{"{", 
+      RowBox[{"base", ",", "0", ",", 
+       RowBox[{
+        RowBox[{"-", "zz"}], "+", "z"}]}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"cAB", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"vA", ",", "vB"}], "}"}], ",", "0.15"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"cAC", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"vA", ",", "vC"}], "}"}], ",", "0.15"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"pin", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"dis", "+", "x"}], ",", 
+           RowBox[{"-", "0.3"}], ",", "z"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"dis", "+", "x"}], ",", "0.3", ",", "z"}], "}"}]}], "}"}], 
+       ",", "0.2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"left", "=", 
+     RowBox[{"Rotate", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"pin", ",", "cAB", ",", "cAC"}], "}"}], ",", "Pi", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"rod1", "=", 
+     RowBox[{"{", 
+      RowBox[{"Yellow", ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{
+              RowBox[{"-", "zz"}], "+", "z"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{
+              RowBox[{"-", "zz"}], "+", "z", "+", "12"}]}], "}"}]}], "}"}], 
+         ",", "0.2"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"piston1", "=", 
+     RowBox[{"{", 
+      RowBox[{"Yellow", ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{
+              RowBox[{"-", "zz"}], "+", "z", "+", "11.6"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{
+              RowBox[{"-", "zz"}], "+", "z", "+", "12.3"}]}], "}"}]}], "}"}], 
+         ",", "1.4"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"rod2", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"1", ",", "0.2", ",", "0.6"}], "]"}], ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"zz", "+", "z"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"zz", "+", "z", "+", "3"}]}], "}"}]}], "}"}], ",", 
+         "0.4"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"piston2", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"1", ",", "0.2", ",", "0.6"}], "]"}], ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"zz", "+", "z", "+", "2.6"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"zz", "+", "z", "+", "3"}]}], "}"}]}], "}"}], ",", 
+         "1.4"}], "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"barrel", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Opacity", "[", "0.3", "]"}], ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "10"}], "}"}]}], "}"}], ",", "1.4"}], 
+        "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"top", "=", 
+     RowBox[{"Cuboid", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", 
+          RowBox[{"-", "0.5"}], ",", 
+          RowBox[{"zz", "+", "z"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "0.5", ",", 
+          RowBox[{"zz", "+", "z", "+", "0.3"}]}], "}"}]}], "}"}], "]"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"bottom", "=", 
+     RowBox[{"Cuboid", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", 
+          RowBox[{"-", "0.5"}], ",", 
+          RowBox[{
+           RowBox[{"-", "zz"}], "+", "z", "-", "0.3"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "0.5", ",", 
+          RowBox[{
+           RowBox[{"-", "zz"}], "+", "z"}]}], "}"}]}], "}"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "g1", ",", "g2", ",", "cAB", ",", "cAC", ",", "left", ",", "pin", ",", 
+        "rod1", ",", "piston1", ",", "rod2", ",", "piston2", ",", "barrel", 
+        ",", "top", ",", "bottom"}], "}"}], ",", 
+      RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "7"}], ",", "11"}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"ViewAngle", "\[Rule]", 
+       RowBox[{"Pi", "/", "40"}]}], ",", 
+      RowBox[{"ViewPoint", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"-", "10"}], ",", "4"}], "}"}]}], ",", 
+      RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"400", ",", "400"}], "}"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "Pi", ",", "\"\<run\>\""}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"-", "5"}], " ", "Pi"}], ",", 
+     RowBox[{"5", " ", "Pi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "4.2", ",", "\"\<length of connecting rod\>\""}], 
+      "}"}], ",", "3.7", ",", "4.3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"base", ",", "0.5", ",", "\"\<base position\>\""}], "}"}], ",", 
+     "0.3", ",", "0.8", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"dis", ",", "2.4", ",", "\"\<gear spacing\>\""}], "}"}], ",", 
+     "1.5", ",", "2.5", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "base", ",", "dis"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[7]:=",ExpressionUUID->"9a23cdce-d3e3-45a4-be7e-49493ff14fb6"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = Pi, $CellContext`b$$ = 
+    4.2, $CellContext`base$$ = 0.5, $CellContext`dis$$ = 2.4, Typeset`show$$ =
+     True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], Pi, "run"}, (-5) Pi, 5 Pi}, {{
+       Hold[$CellContext`b$$], 4.2, "length of connecting rod"}, 3.7, 4.3}, {{
+       Hold[$CellContext`base$$], 0.5, "base position"}, 0.3, 0.8}, {{
+       Hold[$CellContext`dis$$], 2.4, "gear spacing"}, 1.5, 2.5}}, 
+    Typeset`size$$ = {400., {197., 203.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$35198$$ = 0, $CellContext`b$35199$$ = 
+    0, $CellContext`base$35200$$ = 0, $CellContext`dis$35201$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = Pi, $CellContext`b$$ = 
+        4.2, $CellContext`base$$ = 0.5, $CellContext`dis$$ = 2.4}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$35198$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$35199$$, 0], 
+        Hold[$CellContext`base$$, $CellContext`base$35200$$, 0], 
+        Hold[$CellContext`dis$$, $CellContext`dis$35201$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`g1 = {
+          RGBColor[0.6, 1, 0.6], 
+          
+          Cylinder[{{-$CellContext`dis$$, 0.2, 0}, {-$CellContext`dis$$, 0.6, 
+             0}}, 1.3]}; $CellContext`g2 = {
+          RGBColor[0.6, 1, 0.6], 
+          
+          Cylinder[{{$CellContext`dis$$, 0.2, 0}, {$CellContext`dis$$, 0.6, 
+             0}}, 1.3]}; $CellContext`z = 
+        Cos[$CellContext`a$$]; $CellContext`x = 
+        Sin[$CellContext`a$$]; $CellContext`zz = 
+        Sqrt[$CellContext`b$$^2 - ($CellContext`dis$$ + $CellContext`x)^2]; \
+$CellContext`vA = {$CellContext`dis$$ + $CellContext`x, 
+          0, $CellContext`z}; $CellContext`vB = {$CellContext`base$$, 
+          0, $CellContext`zz + $CellContext`z}; $CellContext`vC = \
+{$CellContext`base$$, 0, -$CellContext`zz + $CellContext`z}; $CellContext`cAB = 
+        Cylinder[{$CellContext`vA, $CellContext`vB}, 0.15]; $CellContext`cAC = 
+        Cylinder[{$CellContext`vA, $CellContext`vC}, 0.15]; $CellContext`pin = 
+        Cylinder[{{$CellContext`dis$$ + $CellContext`x, -0.3, \
+$CellContext`z}, {$CellContext`dis$$ + $CellContext`x, 0.3, $CellContext`z}}, 
+          0.2]; $CellContext`left = 
+        Rotate[{$CellContext`pin, $CellContext`cAB, $CellContext`cAC}, Pi, {0,
+           0, 1}]; $CellContext`rod1 = {Yellow, 
+          
+          Cylinder[{{0, 0, -$CellContext`zz + $CellContext`z}, {
+            0, 0, -$CellContext`zz + $CellContext`z + 12}}, 
+           0.2]}; $CellContext`piston1 = {Yellow, 
+          
+          Cylinder[{{0, 0, -$CellContext`zz + $CellContext`z + 11.6}, {
+            0, 0, -$CellContext`zz + $CellContext`z + 12.3}}, 
+           1.4]}; $CellContext`rod2 = {
+          RGBColor[1, 0.2, 0.6], 
+          
+          Cylinder[{{0, 0, $CellContext`zz + $CellContext`z}, {
+            0, 0, $CellContext`zz + $CellContext`z + 3}}, 
+           0.4]}; $CellContext`piston2 = {
+          RGBColor[1, 0.2, 0.6], 
+          
+          Cylinder[{{0, 0, $CellContext`zz + $CellContext`z + 2.6}, {
+            0, 0, $CellContext`zz + $CellContext`z + 3}}, 
+           1.4]}; $CellContext`barrel = {
+          Opacity[0.3], 
+          Cylinder[{{0, 0, 5}, {0, 0, 10}}, 1.4]}; $CellContext`top = 
+        Cuboid[{{-1, -0.5, $CellContext`zz + $CellContext`z}, {
+           1, 0.5, $CellContext`zz + $CellContext`z + 
+            0.3}}]; $CellContext`bottom = 
+        Cuboid[{{-1, -0.5, -$CellContext`zz + $CellContext`z - 0.3}, {
+           1, 0.5, -$CellContext`zz + $CellContext`z}}]; 
+       Graphics3D[{$CellContext`g1, $CellContext`g2, $CellContext`cAB, \
+$CellContext`cAC, $CellContext`left, $CellContext`pin, $CellContext`rod1, \
+$CellContext`piston1, $CellContext`rod2, $CellContext`piston2, \
+$CellContext`barrel, $CellContext`top, $CellContext`bottom}, Boxed -> False, 
+         PlotRange -> {{-5, 5}, {-2, 2}, {-7, 11}}, ViewAngle -> Pi/40, 
+         ViewPoint -> {4, -10, 4}, SphericalRegion -> True, 
+         ImageSize -> {400, 400}]), 
+      "Specifications" :> {{{$CellContext`a$$, Pi, "run"}, (-5) Pi, 5 
+         Pi}, {{$CellContext`b$$, 4.2, "length of connecting rod"}, 3.7, 
+         4.3}, {{$CellContext`base$$, 0.5, "base position"}, 0.3, 0.8, 
+         ImageSize -> Tiny, ControlPlacement -> 
+         Left}, {{$CellContext`dis$$, 2.4, "gear spacing"}, 1.5, 2.5, 
+         ImageSize -> Tiny, ControlPlacement -> Left}}, 
+      "Options" :> {
+       TrackedSymbols -> {$CellContext`a$$, $CellContext`b$$, \
+$CellContext`base$$, $CellContext`dis$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{613., {258., 264.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.772082257544978*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"67c5a34b-87bb-4b8f-9b2d-e360de744321"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.1"}], ",", "0.2", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.4"}], ",", "0.6", ",", "0"}], "}"}]}], "}"}], ",", 
+   "1.3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.772082125834386*^9, 3.77208213356012*^9}, {
+  3.7720821647526693`*^9, 3.772082164881319*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"3c0eca70-ec70-4913-901e-6d286d8dad04"],
+
+Cell[BoxData[
+ RowBox[{"Cylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.1`"}], ",", "0.2`", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.4`"}], ",", "0.6`", ",", "0"}], "}"}]}], "}"}], ",", 
+   "1.3`"}], "]"}]], "Output",
+ CellChangeTimes->{3.772082135161795*^9, 3.7720821660890646`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"6943ba1c-855f-4bf4-ab3a-57ee6392125b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{"Cylinder", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "}"}], ",", 
+    RowBox[{"1", "/", "2"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7720822013762584`*^9, 3.7720822204552217`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"9d203594-0f0b-4c4f-9457-4ca133e051f6"],
+
+Cell[BoxData[
+ Graphics3DBox[
+  CylinderBox[{{0, 0, 0}, {0, 1, 0}}, NCache[Rational[1, 2], 0.5]],
+  ImageSize->{374.0972304221881, 408.1582689421683},
+  ImageSizeRaw->Automatic,
+  ViewPoint->{1.3218608625129609`, -2.030315957869378, 2.362308398871206},
+  ViewVertical->{-0.0803489343823751, 0.11467460733346257`, 
+   0.9901483642245403}]], "Output",
+ CellChangeTimes->{{3.7720821922815614`*^9, 3.772082221307915*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"e1fed195-c576-4383-9df1-f0488bf659f2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Rx", "=", 
+     RowBox[{"Sin", "[", "\[Alpha]", "]"}]}], ";", 
+    RowBox[{"Ry", "=", "0"}], ";", 
+    RowBox[{"Rz", "=", 
+     RowBox[{
+      RowBox[{"Cos", "[", "\[Alpha]", "]"}], "+", "r"}]}], ";", 
+    RowBox[{"vR", "=", 
+     RowBox[{"{", 
+      RowBox[{"Rx", ",", "Ry", ",", "Rz"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"vP", "=", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "r"}], "}"}]}], ";", 
+    RowBox[{"v0", "=", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"crank", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.2", ",", "r"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Rx", ",", 
+           RowBox[{"Ry", "+", "0.2"}], ",", "Rz"}], "}"}]}], "}"}], ",", 
+       "0.1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"w1", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.2", ",", "r"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.3", ",", "r"}], "}"}]}], "}"}], ",", "1.2"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"go", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Rx", ",", 
+           RowBox[{"-", "0.2"}], ",", "Rz"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Rx", ",", "0.2", ",", "Rz"}], "}"}]}], "}"}], ",", "0.2"}],
+       "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"fulcrum", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           RowBox[{"-", "0.2"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.2", ",", "0"}], "}"}]}], "}"}], ",", "0.2"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Ax", "=", 
+     RowBox[{"Rx", " ", 
+      RowBox[{"a", "/", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"Rx", "^", "2"}], "+", 
+         RowBox[{
+          RowBox[{"(", "Rz", ")"}], "^", "2"}]}], "]"}]}]}]}], ";", 
+    RowBox[{"Ay", "=", "0"}], ";", 
+    RowBox[{"Az", "=", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"a", "^", "2"}], "-", 
+       RowBox[{"Ax", "^", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vA", "=", 
+     RowBox[{"{", 
+      RowBox[{"Ax", ",", "Ay", ",", "Az"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"arm", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "vA"}], "}"}], ",", 
+       "0.06"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"bz", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"a", "+", "h"}], ")"}], "-", "Az"}]}], ";", 
+    RowBox[{"bx", "=", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"b", "^", "2"}], "-", 
+       RowBox[{"bz", "^", "2"}]}], "]"}]}], ";", 
+    RowBox[{"Bx", "=", 
+     RowBox[{"Ax", "-", "bx"}]}], ";", 
+    RowBox[{"By", "=", "0"}], ";", 
+    RowBox[{"Bz", "=", 
+     RowBox[{"a", "+", "h"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vB", "=", 
+     RowBox[{"{", 
+      RowBox[{"Bx", ",", "By", ",", "Bz"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"bar", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"vA", ",", "vB"}], "}"}], ",", "0.1"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"z", "=", 
+     RowBox[{"{", 
+      RowBox[{"Dashed", ",", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "9"}], "}"}]}], "}"}], "]"}]}], 
+      "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"cut", "=", 
+     RowBox[{"{", 
+      RowBox[{"Dashed", ",", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "4"}], ",", "0", ",", "Bz"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"4", ",", "0", ",", "Bz"}], "}"}]}], "}"}], "]"}]}], 
+      "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"slide", "=", 
+     RowBox[{"Cuboid", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Bx", "-", "1"}], ",", 
+         RowBox[{"By", "-", "0.2"}], ",", "Bz"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Bx", "+", "3"}], ",", 
+         RowBox[{"By", "+", "0.2"}], ",", 
+         RowBox[{"Bz", "+", "0.2"}]}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"pivot", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Ax", ",", 
+           RowBox[{"Ay", "-", "0.2"}], ",", "Az"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Ax", ",", 
+           RowBox[{"Ay", "+", "0.2"}], ",", "Az"}], "}"}]}], "}"}], ",", 
+       "0.2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"axle", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.1", ",", "r"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1", ",", "r"}], "}"}]}], "}"}], ",", "0.2"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Darker", "[", 
+           RowBox[{"Red", ",", ".25"}], "]"}], ",", "crank"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Darker", "[", 
+           RowBox[{"Black", ",", ".25"}], "]"}], ",", "w1"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", ".47", ",", "0"}], "]"}], ",", "go"}], "}"}], 
+        ",", "\[IndentingNewLine]", "arm", ",", "\[IndentingNewLine]", 
+        "fulcrum", ",", "\[IndentingNewLine]", "z", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"RGBColor", "[", 
+           RowBox[{".6", ",", ".74", ",", ".36"}], "]"}], ",", "bar"}], "}"}],
+         ",", "\[IndentingNewLine]", "cut", ",", "\[IndentingNewLine]", 
+        "slide", ",", "\[IndentingNewLine]", "pivot", ",", 
+        "\[IndentingNewLine]", "axle"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"ViewAngle", "\[Rule]", 
+       RowBox[{"Pi", "/", "14"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "10"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"350", ",", "350"}], "}"}]}]}], "]"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Alpha]", ",", "1", ",", "\"\<rotate\>\""}], "}"}], ",", "0", 
+     ",", 
+     RowBox[{"10", "Pi"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "6", ",", "\"\<arm length\>\""}], "}"}], ",", "5", 
+     ",", "7"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "3", ",", "\"\<axle height\>\""}], "}"}], ",", "3", 
+     ",", "3.5", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", "0.6", ",", "\"\<slide height\>\""}], "}"}], ",", 
+     "0.5", ",", "0.6", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "1.4", ",", "\"\<bar length\>\""}], "}"}], ",", "1", 
+     ",", "3", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[Alpha]", ",", "a", ",", "r", ",", "h", ",", "b"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7720833996720285`*^9, 3.7720834639719944`*^9}, {
+  3.772083579313778*^9, 3.7720836192868214`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"e0d3d112-9c71-42ac-a0fb-68bcd2a79d44"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 6, $CellContext`b$$ = 
+    1.4, $CellContext`h$$ = 0.6, $CellContext`r$$ = 
+    3.178, $CellContext`\[Alpha]$$ = 20.16902483604647, Typeset`show$$ = True,
+     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Alpha]$$], 1, "rotate"}, 0, 10 Pi}, {{
+       Hold[$CellContext`a$$], 6, "arm length"}, 5, 7}, {{
+       Hold[$CellContext`r$$], 3, "axle height"}, 3, 3.5}, {{
+       Hold[$CellContext`h$$], 0.6, "slide height"}, 0.5, 0.6}, {{
+       Hold[$CellContext`b$$], 1.4, "bar length"}, 1, 3}}, Typeset`size$$ = {
+    350., {172., 178.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Alpha]$90988$$ = 
+    0, $CellContext`a$90989$$ = 0, $CellContext`r$90990$$ = 
+    0, $CellContext`h$90991$$ = 0, $CellContext`b$90992$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 6, $CellContext`b$$ = 
+        1.4, $CellContext`h$$ = 0.6, $CellContext`r$$ = 
+        3, $CellContext`\[Alpha]$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Alpha]$$, $CellContext`\[Alpha]$90988$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$90989$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$90990$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$90991$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$90992$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`Rx = 
+        Sin[$CellContext`\[Alpha]$$]; $CellContext`Ry = 0; $CellContext`Rz = 
+        Cos[$CellContext`\[Alpha]$$] + $CellContext`r$$; $CellContext`vR = \
+{$CellContext`Rx, $CellContext`Ry, $CellContext`Rz}; $CellContext`vP = {
+         0, 0, $CellContext`r$$}; $CellContext`v0 = {0, 0, 
+         0}; $CellContext`crank = 
+        Cylinder[{{
+           0, 0.2, $CellContext`r$$}, {$CellContext`Rx, $CellContext`Ry + 
+            0.2, $CellContext`Rz}}, 0.1]; $CellContext`w1 = 
+        Cylinder[{{0, 0.2, $CellContext`r$$}, {0, 0.3, $CellContext`r$$}}, 
+          1.2]; $CellContext`go = 
+        Cylinder[{{$CellContext`Rx, -0.2, $CellContext`Rz}, {$CellContext`Rx, 
+            0.2, $CellContext`Rz}}, 0.2]; $CellContext`fulcrum = 
+        Cylinder[{{0, -0.2, 0}, {0, 0.2, 0}}, 
+          0.2]; $CellContext`Ax = $CellContext`Rx ($CellContext`a$$/
+          Sqrt[$CellContext`Rx^2 + $CellContext`Rz^2]); $CellContext`Ay = 
+        0; $CellContext`Az = 
+        Sqrt[$CellContext`a$$^2 - $CellContext`Ax^2]; $CellContext`vA = \
+{$CellContext`Ax, $CellContext`Ay, $CellContext`Az}; $CellContext`arm = 
+        Cylinder[{{0, 0, 0}, $CellContext`vA}, 
+          0.06]; $CellContext`bz = ($CellContext`a$$ + $CellContext`h$$) - \
+$CellContext`Az; $CellContext`bx = 
+        Sqrt[$CellContext`b$$^2 - $CellContext`bz^2]; $CellContext`Bx = \
+$CellContext`Ax - $CellContext`bx; $CellContext`By = 
+        0; $CellContext`Bz = $CellContext`a$$ + $CellContext`h$$; \
+$CellContext`vB = {$CellContext`Bx, $CellContext`By, $CellContext`Bz}; \
+$CellContext`bar = 
+        Cylinder[{$CellContext`vA, $CellContext`vB}, 0.1]; $CellContext`z = {
+         Dashed, 
+          Line[{{0, 0, -1}, {0, 0, 9}}]}; $CellContext`cut = {Dashed, 
+          
+          Line[{{-4, 0, $CellContext`Bz}, {
+            4, 0, $CellContext`Bz}}]}; $CellContext`slide = 
+        Cuboid[{$CellContext`Bx - 1, $CellContext`By - 
+           0.2, $CellContext`Bz}, {$CellContext`Bx + 3, $CellContext`By + 
+           0.2, $CellContext`Bz + 0.2}]; $CellContext`pivot = 
+        Cylinder[{{$CellContext`Ax, $CellContext`Ay - 
+            0.2, $CellContext`Az}, {$CellContext`Ax, $CellContext`Ay + 
+            0.2, $CellContext`Az}}, 0.2]; $CellContext`axle = 
+        Cylinder[{{0, 0.1, $CellContext`r$$}, {0, 1, $CellContext`r$$}}, 0.2]; 
+       Graphics3D[{{
+           Darker[Red, 0.25], $CellContext`crank}, {
+           Darker[Black, 0.25], $CellContext`w1}, {
+           RGBColor[
+           1, 0.47, 
+            0], $CellContext`go}, $CellContext`arm, $CellContext`fulcrum, \
+$CellContext`z, {
+           RGBColor[
+           0.6, 0.74, 
+            0.36], $CellContext`bar}, $CellContext`cut, $CellContext`slide, \
+$CellContext`pivot, $CellContext`axle}, ViewAngle -> Pi/14, SphericalRegion -> 
+         True, Boxed -> False, PlotRange -> {{-5, 5}, {-1, 1}, {-1, 10}}, 
+         ImageSize -> {350, 350}]), 
+      "Specifications" :> {{{$CellContext`\[Alpha]$$, 1, "rotate"}, 0, 10 
+         Pi}, {{$CellContext`a$$, 6, "arm length"}, 5, 
+         7}, {{$CellContext`r$$, 3, "axle height"}, 3, 3.5, ImageSize -> Tiny,
+          ControlPlacement -> Left}, {{$CellContext`h$$, 0.6, "slide height"},
+          0.5, 0.6, ImageSize -> Tiny, ControlPlacement -> 
+         Left}, {{$CellContext`b$$, 1.4, "bar length"}, 1, 3, ImageSize -> 
+         Tiny, ControlPlacement -> Left}}, 
+      "Options" :> {
+       TrackedSymbols -> {$CellContext`\[Alpha]$$, $CellContext`a$$, \
+$CellContext`r$$, $CellContext`h$$, $CellContext`b$$}}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{554., {233., 239.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.772083382640563*^9, {3.772083583835656*^9, 3.7720836204118376`*^9}},
+ CellLabel->"Out[11]=",ExpressionUUID->"3daec2b5-c4c7-40b9-a319-425e7935f15d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Rx", "=", 
+     RowBox[{"Sin", "[", "\[Alpha]", "]"}]}], ";", 
+    RowBox[{"Ry", "=", "0"}], ";", 
+    RowBox[{"Rz", "=", 
+     RowBox[{
+      RowBox[{"Cos", "[", "\[Alpha]", "]"}], "+", "r"}]}], ";", 
+    RowBox[{"vR", "=", 
+     RowBox[{"{", 
+      RowBox[{"Rx", ",", "Ry", ",", "Rz"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"vP", "=", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "r"}], "}"}]}], ";", 
+    RowBox[{"v0", "=", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"crank", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.2", ",", "r"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Rx", ",", 
+           RowBox[{"Ry", "+", "0.2"}], ",", "Rz"}], "}"}]}], "}"}], ",", 
+       "0.1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"w1", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.2", ",", "r"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.3", ",", "r"}], "}"}]}], "}"}], ",", "1.2"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"go", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Rx", ",", 
+           RowBox[{"-", "0.2"}], ",", "Rz"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Rx", ",", "0.2", ",", "Rz"}], "}"}]}], "}"}], ",", "0.2"}],
+       "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"fulcrum", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           RowBox[{"-", "0.2"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.2", ",", "0"}], "}"}]}], "}"}], ",", "0.2"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Ax", "=", 
+     RowBox[{"Rx", " ", 
+      RowBox[{"a", "/", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"Rx", "^", "2"}], "+", 
+         RowBox[{
+          RowBox[{"(", "Rz", ")"}], "^", "2"}]}], "]"}]}]}]}], ";", 
+    RowBox[{"Ay", "=", "0"}], ";", 
+    RowBox[{"Az", "=", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"a", "^", "2"}], "-", 
+       RowBox[{"Ax", "^", "2"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vA", "=", 
+     RowBox[{"{", 
+      RowBox[{"Ax", ",", "Ay", ",", "Az"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"arm", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "vA"}], "}"}], ",", 
+       "0.06"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"bz", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"a", "+", "h"}], ")"}], "-", "Az"}]}], ";", 
+    RowBox[{"bx", "=", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"b", "^", "2"}], "-", 
+       RowBox[{"bz", "^", "2"}]}], "]"}]}], ";", 
+    RowBox[{"Bx", "=", 
+     RowBox[{"Ax", "-", "bx"}]}], ";", 
+    RowBox[{"By", "=", "0"}], ";", 
+    RowBox[{"Bz", "=", 
+     RowBox[{"a", "+", "h"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"vB", "=", 
+     RowBox[{"{", 
+      RowBox[{"Bx", ",", "By", ",", "Bz"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"bar", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"vA", ",", "vB"}], "}"}], ",", "0.1"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"z", "=", 
+     RowBox[{"{", 
+      RowBox[{"Dashed", ",", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "9"}], "}"}]}], "}"}], "]"}]}], 
+      "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"cut", "=", 
+     RowBox[{"{", 
+      RowBox[{"Dashed", ",", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "4"}], ",", "0", ",", "Bz"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"4", ",", "0", ",", "Bz"}], "}"}]}], "}"}], "]"}]}], 
+      "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"slide", "=", 
+     RowBox[{"Cuboid", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Bx", "-", "1"}], ",", 
+         RowBox[{"By", "-", "0.2"}], ",", "Bz"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Bx", "+", "3"}], ",", 
+         RowBox[{"By", "+", "0.2"}], ",", 
+         RowBox[{"Bz", "+", "0.2"}]}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"pivot", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Ax", ",", 
+           RowBox[{"Ay", "-", "0.2"}], ",", "Az"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Ax", ",", 
+           RowBox[{"Ay", "+", "0.2"}], ",", "Az"}], "}"}]}], "}"}], ",", 
+       "0.2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"axle", "=", 
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0.1", ",", "r"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1", ",", "r"}], "}"}]}], "}"}], ",", "0.2"}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Darker", "[", 
+            RowBox[{"Red", ",", ".25"}], "]"}], ",", "crank"}], "}"}], ","}], 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Darker", "[", 
+           RowBox[{"Blue", ",", ".25"}], "]"}], ",", "w1"}], "}"}], ","}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"RGBColor", "[", 
+            RowBox[{"1", ",", ".47", ",", "0"}], "]"}], ",", "go"}], "}"}], 
+         ",", "\[IndentingNewLine]", "arm", ",", "\[IndentingNewLine]", 
+         "fulcrum", ",", "\[IndentingNewLine]", "z", ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"RGBColor", "[", 
+            RowBox[{".6", ",", ".74", ",", ".36"}], "]"}], ",", "bar"}], 
+          "}"}], ",", "\[IndentingNewLine]", "cut", ",", 
+         "\[IndentingNewLine]", "slide", ",", "\[IndentingNewLine]", "pivot", 
+         ",", "\[IndentingNewLine]", "axle"}], "*)"}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"ViewAngle", "\[Rule]", 
+       RowBox[{"Pi", "/", "14"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "10"}], "}"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"350", ",", "350"}], "}"}]}]}], "]"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Alpha]", ",", "1", ",", "\"\<rotate\>\""}], "}"}], ",", "0", 
+     ",", 
+     RowBox[{"10", "Pi"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "6", ",", "\"\<arm length\>\""}], "}"}], ",", "5", 
+     ",", "7"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "3", ",", "\"\<axle height\>\""}], "}"}], ",", "3", 
+     ",", "3.5", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", "0.6", ",", "\"\<slide height\>\""}], "}"}], ",", 
+     "0.5", ",", "0.6", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "1.4", ",", "\"\<bar length\>\""}], "}"}], ",", "1", 
+     ",", "3", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[Alpha]", ",", "a", ",", "r", ",", "h", ",", "b"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7720836853231993`*^9, 
+  3.7720837342243795`*^9}},ExpressionUUID->"3fdd912b-ee56-4f24-a000-\
+bb863dd84cfd"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 6, $CellContext`b$$ = 
+    1.4, $CellContext`h$$ = 0.6, $CellContext`r$$ = 
+    3, $CellContext`\[Alpha]$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Alpha]$$], 1, "rotate"}, 0, 10 Pi}, {{
+       Hold[$CellContext`a$$], 6, "arm length"}, 5, 7}, {{
+       Hold[$CellContext`r$$], 3, "axle height"}, 3, 3.5}, {{
+       Hold[$CellContext`h$$], 0.6, "slide height"}, 0.5, 0.6}, {{
+       Hold[$CellContext`b$$], 1.4, "bar length"}, 1, 3}}, Typeset`size$$ = {
+    350., {172., 178.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Alpha]$91373$$ = 
+    0, $CellContext`a$91374$$ = 0, $CellContext`r$91375$$ = 
+    0, $CellContext`h$91376$$ = 0, $CellContext`b$91377$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 6, $CellContext`b$$ = 
+        1.4, $CellContext`h$$ = 0.6, $CellContext`r$$ = 
+        3, $CellContext`\[Alpha]$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Alpha]$$, $CellContext`\[Alpha]$91373$$, 0], 
+        Hold[$CellContext`a$$, $CellContext`a$91374$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$91375$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$91376$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$91377$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`Rx = 
+        Sin[$CellContext`\[Alpha]$$]; $CellContext`Ry = 0; $CellContext`Rz = 
+        Cos[$CellContext`\[Alpha]$$] + $CellContext`r$$; $CellContext`vR = \
+{$CellContext`Rx, $CellContext`Ry, $CellContext`Rz}; $CellContext`vP = {
+         0, 0, $CellContext`r$$}; $CellContext`v0 = {0, 0, 
+         0}; $CellContext`crank = 
+        Cylinder[{{
+           0, 0.2, $CellContext`r$$}, {$CellContext`Rx, $CellContext`Ry + 
+            0.2, $CellContext`Rz}}, 0.1]; $CellContext`w1 = 
+        Cylinder[{{0, 0.2, $CellContext`r$$}, {0, 0.3, $CellContext`r$$}}, 
+          1.2]; $CellContext`go = 
+        Cylinder[{{$CellContext`Rx, -0.2, $CellContext`Rz}, {$CellContext`Rx, 
+            0.2, $CellContext`Rz}}, 0.2]; $CellContext`fulcrum = 
+        Cylinder[{{0, -0.2, 0}, {0, 0.2, 0}}, 
+          0.2]; $CellContext`Ax = $CellContext`Rx ($CellContext`a$$/
+          Sqrt[$CellContext`Rx^2 + $CellContext`Rz^2]); $CellContext`Ay = 
+        0; $CellContext`Az = 
+        Sqrt[$CellContext`a$$^2 - $CellContext`Ax^2]; $CellContext`vA = \
+{$CellContext`Ax, $CellContext`Ay, $CellContext`Az}; $CellContext`arm = 
+        Cylinder[{{0, 0, 0}, $CellContext`vA}, 
+          0.06]; $CellContext`bz = ($CellContext`a$$ + $CellContext`h$$) - \
+$CellContext`Az; $CellContext`bx = 
+        Sqrt[$CellContext`b$$^2 - $CellContext`bz^2]; $CellContext`Bx = \
+$CellContext`Ax - $CellContext`bx; $CellContext`By = 
+        0; $CellContext`Bz = $CellContext`a$$ + $CellContext`h$$; \
+$CellContext`vB = {$CellContext`Bx, $CellContext`By, $CellContext`Bz}; \
+$CellContext`bar = 
+        Cylinder[{$CellContext`vA, $CellContext`vB}, 0.1]; $CellContext`z = {
+         Dashed, 
+          Line[{{0, 0, -1}, {0, 0, 9}}]}; $CellContext`cut = {Dashed, 
+          
+          Line[{{-4, 0, $CellContext`Bz}, {
+            4, 0, $CellContext`Bz}}]}; $CellContext`slide = 
+        Cuboid[{$CellContext`Bx - 1, $CellContext`By - 
+           0.2, $CellContext`Bz}, {$CellContext`Bx + 3, $CellContext`By + 
+           0.2, $CellContext`Bz + 0.2}]; $CellContext`pivot = 
+        Cylinder[{{$CellContext`Ax, $CellContext`Ay - 
+            0.2, $CellContext`Az}, {$CellContext`Ax, $CellContext`Ay + 
+            0.2, $CellContext`Az}}, 0.2]; $CellContext`axle = 
+        Cylinder[{{0, 0.1, $CellContext`r$$}, {0, 1, $CellContext`r$$}}, 0.2]; 
+       Graphics3D[{{
+           Darker[Black, 0.25], $CellContext`w1}, Null}, ViewAngle -> Pi/14, 
+         SphericalRegion -> True, Boxed -> False, 
+         PlotRange -> {{-5, 5}, {-1, 1}, {-1, 10}}, ImageSize -> {350, 350}]),
+       "Specifications" :> {{{$CellContext`\[Alpha]$$, 1, "rotate"}, 0, 10 
+         Pi}, {{$CellContext`a$$, 6, "arm length"}, 5, 
+         7}, {{$CellContext`r$$, 3, "axle height"}, 3, 3.5, ImageSize -> Tiny,
+          ControlPlacement -> Left}, {{$CellContext`h$$, 0.6, "slide height"},
+          0.5, 0.6, ImageSize -> Tiny, ControlPlacement -> 
+         Left}, {{$CellContext`b$$, 1.4, "bar length"}, 1, 3, ImageSize -> 
+         Tiny, ControlPlacement -> Left}}, 
+      "Options" :> {
+       TrackedSymbols -> {$CellContext`\[Alpha]$$, $CellContext`a$$, \
+$CellContext`r$$, $CellContext`h$$, $CellContext`b$$}}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{554., {233., 239.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.772083726007335*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"a1d30a2b-2baa-4ac7-bf9d-ae45b5c14992"]
+}, Open  ]]
+},
+WindowSize->{1520, 781},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 9077, 259, 447, "Input",ExpressionUUID->"9a23cdce-d3e3-45a4-be7e-49493ff14fb6"],
+Cell[9660, 283, 5682, 105, 541, "Output",ExpressionUUID->"67c5a34b-87bb-4b8f-9b2d-e360de744321"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15379, 393, 513, 14, 28, "Input",ExpressionUUID->"3c0eca70-ec70-4913-901e-6d286d8dad04"],
+Cell[15895, 409, 469, 13, 32, "Output",ExpressionUUID->"6943ba1c-855f-4bf4-ab3a-57ee6392125b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16401, 427, 476, 12, 28, "Input",ExpressionUUID->"9d203594-0f0b-4c4f-9457-4ca133e051f6"],
+Cell[16880, 441, 495, 9, 425, "Output",ExpressionUUID->"e1fed195-c576-4383-9df1-f0488bf659f2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17412, 455, 9259, 262, 751, "Input",ExpressionUUID->"e0d3d112-9c71-42ac-a0fb-68bcd2a79d44"],
+Cell[26674, 719, 6008, 110, 491, "Output",ExpressionUUID->"3daec2b5-c4c7-40b9-a319-425e7935f15d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32719, 834, 9335, 267, 770, "Input",ExpressionUUID->"3fdd912b-ee56-4f24-a000-bb863dd84cfd"],
+Cell[42057, 1103, 5591, 100, 491, "Output",ExpressionUUID->"a1d30a2b-2baa-4ac7-bf9d-ae45b5c14992"]
+}, Open  ]]
+}
+]
+*)
+
