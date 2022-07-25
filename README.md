@@ -76,7 +76,7 @@ While this system is practical, if has the disadvantages of:
 - Requires a large number of actuators
 
 
-You can see these suggestions in action [here on youtube](). They are also in the [BrianMechanism-Concept Notebook](./BrianMechanism-Concept.nb)
+You can see these suggestions in action [here on youtube](https://youtu.be/zpdy7t51o8g). They are also in the [BrianMechanism-Concept Notebook](./BrianMechanism-Concept.nb)
 
 ## How we reinveted the wheel 
 Our proprietary design solves these challenges.
