@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     88626,       1875]
-NotebookOptionsPosition[     87461,       1848]
-NotebookOutlinePosition[     87794,       1863]
-CellTagsIndexPosition[     87751,       1860]
+NotebookDataLength[     88948,       1883]
+NotebookOptionsPosition[     87783,       1856]
+NotebookOutlinePosition[     88116,       1871]
+CellTagsIndexPosition[     88073,       1868]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1230,8 +1230,14 @@ Cell[BoxData[{
            RowBox[{
             FractionBox[
              RowBox[{"Mod", "[", 
-              RowBox[{"x", ",", "chainLength"}], "]"}], "chainLength"], "*", 
-            "360"}]}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"botType", "==", "\"\<Normal\>\""}], ",", "1", ",", 
+                  "2"}], "]"}], "*", "x"}], ",", "chainLength"}], "]"}], 
+             "chainLength"], "*", "360"}]}], ";"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
        RowBox[{"wheels1Pos1", " ", "=", " ", 
         RowBox[{"RotateChaininAir", "[", 
          RowBox[{"chainCenter", ",", "startLegAngle"}], "]"}]}], ";", 
@@ -1595,8 +1601,9 @@ Cell[BoxData[{
    3.868293049817937*^9}, {3.868293398063326*^9, 3.868293407407321*^9}, {
    3.8682935294380617`*^9, 3.868293628658989*^9}, {3.8682938224122677`*^9, 
    3.868293851723283*^9}, {3.8682940004011803`*^9, 3.868294000443342*^9}, {
-   3.8682940894891376`*^9, 3.868294092161377*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
+   3.8682940894891376`*^9, 3.868294092161377*^9}, {3.868296135859015*^9, 
+   3.8682961434783087`*^9}},ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-\
+e00bc81a8984"],
 
 Cell[CellGroupData[{
 
@@ -1649,19 +1656,19 @@ Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`botType$$ = 
-    "Normal", $CellContext`botWidth$$ = 267., $CellContext`legOffset$$ = 
-    True, $CellContext`legSets$$ = 1, $CellContext`workspaceLength$$ = 
-    1594., $CellContext`x$$ = 0, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{
+    "Brian Mechanism", $CellContext`botWidth$$ = 
+    267., $CellContext`legOffset$$ = True, $CellContext`legSets$$ = 
+    2, $CellContext`workspaceLength$$ = 1594., $CellContext`x$$ = 
+    477.1324447631836, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`x$$], 0, 1000}, {
       Hold[$CellContext`botType$$], {"Normal", "Brian Mechanism"}}, {
       Hold[$CellContext`botWidth$$], 100, 1000}, {
       Hold[$CellContext`legOffset$$], {True, False}}, {
       Hold[$CellContext`legSets$$], {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
       Hold[$CellContext`workspaceLength$$], 0, 1600}}, Typeset`size$$ = {
-    1323., {282., 287.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    1323., {282., 289.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
     Typeset`skipInitDone$$ = True, $CellContext`x$12307$$ = 
     0, $CellContext`botType$12308$$ = False, $CellContext`botWidth$12309$$ = 
     0, $CellContext`legOffset$12310$$ = False, $CellContext`legSets$12311$$ = 
@@ -1695,7 +1702,7 @@ $CellContext`workspaceLength$$], 1],
          True, False}}, {$CellContext`legSets$$, {1, 2, 3, 4, 5, 6, 7, 8, 9, 
          10}}, {$CellContext`workspaceLength$$, 0, 1600}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{1370., {387., 394.}},
+     ImageSizeCache->{1370., {399., 406.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1728,7 +1735,8 @@ $CellContext`workspaceLength$$], 1],
    3.868288916543729*^9}, 3.8682890453016653`*^9, 3.8682890834544973`*^9, 
    3.868289120784532*^9, 3.8682891706900167`*^9, {3.868289548956406*^9, 
    3.868289559801064*^9}, 3.8682912315390587`*^9, 3.868291771121449*^9, 
-   3.868294564030931*^9, 3.868294626966028*^9},
+   3.868294564030931*^9, 3.868294626966028*^9, {3.868294677783949*^9, 
+   3.8682946972817497`*^9}},
  CellLabel->"Out[3]=",ExpressionUUID->"11cffdaf-a3c9-4029-92ea-b99ace6ab28f"]
 }, Open  ]],
 
@@ -1868,14 +1876,14 @@ Cell[CellGroupData[{
 Cell[22452, 479, 2913, 67, 124, "Input",ExpressionUUID->"db47d516-15d6-46b5-a310-0fb3e98c92e2"],
 Cell[25368, 548, 5439, 97, 322, "Output",ExpressionUUID->"08679a46-3d61-4ad0-a449-a2c58f13ee15"]
 }, Open  ]],
-Cell[30822, 648, 44545, 950, 3712, "Input",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
+Cell[30822, 648, 44790, 957, 3743, "Input",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
 Cell[CellGroupData[{
-Cell[75392, 1602, 2050, 43, 55, "Input",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
-Cell[77445, 1647, 4958, 84, 833, "Output",ExpressionUUID->"11cffdaf-a3c9-4029-92ea-b99ace6ab28f"]
+Cell[75637, 1609, 2050, 43, 55, "Input",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
+Cell[77690, 1654, 5035, 85, 824, "Output",ExpressionUUID->"11cffdaf-a3c9-4029-92ea-b99ace6ab28f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[82440, 1736, 1232, 33, 55, "Input",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"],
-Cell[83675, 1771, 3770, 74, 456, "Output",ExpressionUUID->"ba8e9a2f-7eed-418a-b39d-8f74677d3955"]
+Cell[82762, 1744, 1232, 33, 55, "Input",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"],
+Cell[83997, 1779, 3770, 74, 456, "Output",ExpressionUUID->"ba8e9a2f-7eed-418a-b39d-8f74677d3955"]
 }, Open  ]]
 }
 ]
