@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28114,        600]
-NotebookOptionsPosition[     27507,        582]
-NotebookOutlinePosition[     27840,        597]
-CellTagsIndexPosition[     27797,        594]
+NotebookDataLength[     88626,       1875]
+NotebookOptionsPosition[     87461,       1848]
+NotebookOutlinePosition[     87794,       1863]
+CellTagsIndexPosition[     87751,       1860]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -34,7 +34,8 @@ Cell[BoxData[
      RowBox[{
      "Lc_", ",", " ", "Lf_", ",", " ", "n_", ",", " ", "costPerMeter_", ",", 
       "height_", ",", " ", "x_", ",", "opacityParam_", ",", " ", "stable_", 
-      ",", "stableExt_", ",", " ", "saveMaterial_"}], "]"}], ":=", " ", 
+      ",", "stableExt_", ",", " ", "botType_", ",", "saveMaterialParam_"}], 
+     "]"}], ":=", " ", 
     RowBox[{"Module", "[", 
      RowBox[{
       RowBox[{"{", "\[IndentingNewLine]", 
@@ -60,7 +61,13 @@ Cell[BoxData[
          RowBox[{"If", "[", 
           RowBox[{
            RowBox[{"opacityParam", "\[Equal]", "True"}], ",", "1", ",", "0"}],
-           "]"}]}]}], "\[IndentingNewLine]", "}"}], ",", 
+           "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"saveMaterial", " ", "=", " ", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"botType", " ", "\[NotEqual]", " ", "\"\<fixed\>\""}], ",",
+            "True", ",", "saveMaterialParam"}], "]"}]}]}], 
+       "\[IndentingNewLine]", "}"}], ",", 
       RowBox[{"{", "\[IndentingNewLine]", 
        RowBox[{
         RowBox[{
@@ -162,36 +169,40 @@ Cell[BoxData[
                 RowBox[{
                  RowBox[{"stableExt", "\[Equal]", "True"}], ",", " ", "Lf", 
                  ",", "0"}], "]"}]}], ")"}]}], ";", "\[IndentingNewLine]", 
-            "\[IndentingNewLine]", 
             RowBox[{"If", "[", 
              RowBox[{
-              RowBox[{"saveMaterial", "\[NotEqual]", " ", "True"}], ",", 
+              RowBox[{"botType", "\[Equal]", "\"\<fixed\>\""}], ",", 
               "\[IndentingNewLine]", 
               RowBox[{
-               RowBox[{"graphicsList", "[", 
-                RowBox[{"[", "3", "]"}], "]"}], " ", "=", " ", 
-               RowBox[{"{", 
-                RowBox[{"White", ",", " ", 
-                 RowBox[{"Cuboid", "[", 
-                  RowBox[{
-                   RowBox[{"{", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"saveMaterial", "\[NotEqual]", " ", "True"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"graphicsList", "[", 
+                   RowBox[{"[", "3", "]"}], "]"}], " ", "=", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"White", ",", " ", 
+                    RowBox[{"Cuboid", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", 
                     RowBox[{"(", 
                     RowBox[{"Lc", "-", " ", "Lf"}], ")"}]}], ",", "0", ",", 
                     "height"}], "}"}], ",", " ", 
-                   RowBox[{"{", 
+                    RowBox[{"{", 
                     RowBox[{"totalLength", ",", " ", "thickness", ",", " ", 
                     RowBox[{"2", "*", "height"}]}], "}"}]}], "]"}]}], "}"}]}],
-               ",", "\[IndentingNewLine]", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"graphicsList", "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
-                RowBox[{"{", 
+                  ",", "\[IndentingNewLine]", 
                  RowBox[{
-                  RowBox[{"If", "[", 
-                   RowBox[{
+                  RowBox[{
+                   RowBox[{"graphicsList", "[", 
+                    RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{
@@ -208,16 +219,16 @@ Cell[BoxData[
                     RowBox[{"(", "frameEndX", ")"}]}]}]}], ")"}], ",", 
                     "Green", ",", " ", 
                     RowBox[{"Opacity", "[", "opacity", "]"}]}], "]"}], ",", 
-                  RowBox[{"Cuboid", "[", 
-                   RowBox[{
+                    RowBox[{"Cuboid", "[", 
+                    RowBox[{
                     RowBox[{"{", 
                     RowBox[{"frameStartX", ",", "0", ",", "height"}], "}"}], 
                     ",", " ", 
                     RowBox[{"{", 
                     RowBox[{"frameEndX", ",", "thickness", ",", " ", 
                     RowBox[{"2", "*", "height"}]}], "}"}]}], "]"}]}], "}"}]}],
-                ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
-            "\[IndentingNewLine]", 
+                   ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+             "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
             RowBox[{"counter", " ", "+=", " ", "1"}]}]}], 
           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
          "\[IndentingNewLine]", 
@@ -261,8 +272,10 @@ Cell[BoxData[
               RowBox[{"If", "[", 
                RowBox[{
                 RowBox[{"stable", "\[Equal]", "True"}], ",", " ", 
-                FractionBox[
-                 RowBox[{"Lf", "-", "Lc"}], "2"], ",", "0"}], "]"}]}]}], ";", 
+                RowBox[{
+                 FractionBox[
+                  RowBox[{"Lf", "-", "Lc"}], "2"], "-", 
+                 FractionBox["Lf", "2"]}], ",", "0"}], "]"}]}]}], ";", 
             "\[IndentingNewLine]", 
             RowBox[{"frameEndX", " ", "=", 
              RowBox[{"frameStartX", " ", "+", "Lf"}]}], ";", 
@@ -287,7 +300,72 @@ Cell[BoxData[
             "\[IndentingNewLine]", 
             RowBox[{"If", "[", 
              RowBox[{
-              RowBox[{"saveMaterial", "\[NotEqual]", " ", "True"}], ",", 
+              RowBox[{"botType", "\[Equal]", "\"\<fixed\>\""}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"saveMaterial", "\[NotEqual]", " ", "True"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"graphicsList1", "[", 
+                   RowBox[{"[", "3", "]"}], "]"}], " ", "=", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"White", ",", " ", 
+                    RowBox[{"Cuboid", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"Lc", "-", " ", "Lf"}], ")"}]}], ",", 
+                    RowBox[{"thickness", "+", "robotWidth", "+", "0"}], ",", 
+                    "height"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"totalLength", ",", 
+                    RowBox[{
+                    "thickness", "+", "robotWidth", "+", " ", "thickness"}], 
+                    ",", " ", 
+                    RowBox[{"2", "*", "height"}]}], "}"}]}], "]"}]}], "}"}]}],
+                  ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"graphicsList1", "[", 
+                    RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+                   RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"payloadStartX", "<=", "frameStartX"}], " ", "&&",
+                     " ", 
+                    RowBox[{"payloadEndX", ">=", " ", "frameStartX"}]}], 
+                    ")"}], "||", 
+                    RowBox[{
+                    RowBox[{"payloadStartX", "<=", "frameEndX"}], " ", "&&", 
+                    "  ", 
+                    RowBox[{"payloadEndX", ">=", " ", 
+                    RowBox[{"(", "frameEndX", ")"}]}]}]}], ",", 
+                    "\[IndentingNewLine]", "Green", ",", " ", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Opacity", "[", "opacity", "]"}]}], 
+                    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+                    
+                    RowBox[{"Cuboid", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"frameStartX", ",", 
+                    RowBox[{"thickness", "+", "robotWidth", "+", "0"}], ",", 
+                    "height"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"frameEndX", ",", 
+                    RowBox[{
+                    "thickness", "+", "robotWidth", "+", "thickness"}], ",", 
+                    " ", 
+                    RowBox[{"2", "*", "height"}]}], "}"}]}], "]"}]}], "}"}]}],
+                   ";"}]}], "\[IndentingNewLine]", "]"}], ";"}], ",", 
               "\[IndentingNewLine]", 
               RowBox[{
                RowBox[{"graphicsList1", "[", 
@@ -309,44 +387,7 @@ Cell[BoxData[
                     "thickness", "+", "robotWidth", "+", " ", "thickness"}], 
                     ",", " ", 
                     RowBox[{"2", "*", "height"}]}], "}"}]}], "]"}]}], "}"}]}],
-               ",", "\[IndentingNewLine]", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"graphicsList1", "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
-                RowBox[{"{", "\[IndentingNewLine]", 
-                 RowBox[{
-                  RowBox[{"If", "[", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"(", 
-                    RowBox[{
-                    RowBox[{"payloadStartX", "<=", "frameStartX"}], " ", "&&",
-                     " ", 
-                    RowBox[{"payloadEndX", ">=", " ", "frameStartX"}]}], 
-                    ")"}], "||", 
-                    RowBox[{
-                    RowBox[{"payloadStartX", "<=", "frameEndX"}], " ", "&&", 
-                    "  ", 
-                    RowBox[{"payloadEndX", ">=", " ", 
-                    RowBox[{"(", "frameEndX", ")"}]}]}]}], ",", 
-                    "\[IndentingNewLine]", "Green", ",", " ", 
-                    "\[IndentingNewLine]", 
-                    RowBox[{"Opacity", "[", "opacity", "]"}]}], 
-                   "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
-                  RowBox[{"Cuboid", "[", 
-                   RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"frameStartX", ",", 
-                    RowBox[{"thickness", "+", "robotWidth", "+", "0"}], ",", 
-                    "height"}], "}"}], ",", " ", 
-                    RowBox[{"{", 
-                    RowBox[{"frameEndX", ",", 
-                    RowBox[{
-                    "thickness", "+", "robotWidth", "+", "thickness"}], ",", 
-                    " ", 
-                    RowBox[{"2", "*", "height"}]}], "}"}]}], "]"}]}], "}"}]}],
-                ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+               ","}], "\[IndentingNewLine]", "]"}], ";", 
             "\[IndentingNewLine]", 
             RowBox[{"counter", " ", "+=", " ", "1"}]}]}], 
           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
@@ -427,8 +468,12 @@ Cell[BoxData[
    3.8682519975170918`*^9}, 3.868252029548877*^9, {3.868252084540959*^9, 
    3.868252107311103*^9}, {3.868252144114553*^9, 3.8682521925300713`*^9}, {
    3.868252233454816*^9, 3.868252310074725*^9}, {3.8682523616934433`*^9, 
-   3.868252361830217*^9}, {3.868252424180092*^9, 3.868252425832344*^9}},
- CellLabel->"In[35]:=",ExpressionUUID->"c8479fa7-0219-4a37-bff5-ef14bed4f857"],
+   3.868252361830217*^9}, {3.868252424180092*^9, 3.868252425832344*^9}, {
+   3.868253322090725*^9, 3.868253325352807*^9}, {3.8682540384502974`*^9, 
+   3.8682540420515747`*^9}, {3.8682540853799267`*^9, 3.868254151161433*^9}, {
+   3.868254213324233*^9, 3.868254252475101*^9}, {3.868254336090461*^9, 
+   3.868254336620448*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c8479fa7-0219-4a37-bff5-ef14bed4f857"],
 
 Cell[CellGroupData[{
 
@@ -442,7 +487,7 @@ Cell[BoxData[
        RowBox[{
        "Lcc", ",", " ", "10", ",", " ", "nn", ",", " ", "1000", ",", " ", 
         "40", ",", " ", "t", ",", " ", "rail", ",", "stable", ",", 
-        "overhanging", ",", "savematerial"}], "]"}], "[", 
+        "overhanging", ",", "botType", ",", "savematerial"}], "]"}], "[", 
       RowBox[{"[", "1", "]"}], "]"}], "\[IndentingNewLine]", ",", 
      RowBox[{"{", 
       RowBox[{"t", ",", "0", ",", 
@@ -462,7 +507,12 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"Lcc", ",", "11", ",", "100"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"nn", ",", " ", "1", ",", "200"}], "}"}], ",", 
+    RowBox[{"nn", ",", " ", "1", ",", "200"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"botType", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<fixed\>\"", ",", "\"\<chain\>\"", ",", "\"\<legs\>\""}], 
+      "}"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"savematerial", ",", " ", 
      RowBox[{"{", 
@@ -483,52 +533,62 @@ Cell[BoxData[
     RowBox[{"{", 
      RowBox[{
       RowBox[{"nn", "=", "5"}], ",", 
-      RowBox[{"Lcc", "=", "30"}]}], "}"}]}]}], "]"}]], "Input",
+      RowBox[{"Lcc", "=", "30"}], ",", " ", 
+      RowBox[{"savematerial", "=", "False"}]}], "}"}]}]}], "]"}]], "Input",
  CellChangeTimes->{{3.8680906827526293`*^9, 3.868090705931325*^9}, {
   3.868091585443149*^9, 3.8680916018359423`*^9}, {3.868091855796452*^9, 
   3.868091886560515*^9}, {3.8680921700654182`*^9, 3.8680921709736423`*^9}, {
   3.86809220732568*^9, 3.8680922273384027`*^9}, {3.868251052542036*^9, 
   3.868251074969084*^9}, {3.868251181627194*^9, 3.868251187198946*^9}, {
   3.868251251546529*^9, 3.868251287525065*^9}, {3.8682524719214773`*^9, 
-  3.868252508288571*^9}},
- CellLabel->"In[37]:=",ExpressionUUID->"db47d516-15d6-46b5-a310-0fb3e98c92e2"],
+  3.868252508288571*^9}, {3.868252846159034*^9, 3.86825288383885*^9}, {
+  3.868252922230427*^9, 3.8682529648293257`*^9}, {3.8682540224159107`*^9, 
+  3.868254031207052*^9}, {3.8682541661489*^9, 3.8682541701382713`*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"db47d516-15d6-46b5-a310-0fb3e98c92e2"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`Lcc$$ = 30, $CellContext`nn$$ = 5, 
+   DynamicModuleBox[{CloudObject`Private`botType$$ = 
+    "fixed", $CellContext`Lcc$$ = 30, $CellContext`nn$$ = 5, 
     CloudObject`Private`overhanging$$ = False, $CellContext`rail$$ = 
-    True, $CellContext`savematerial$$ = False, $CellContext`stable$$ = False, 
+    True, $CellContext`savematerial$$ = False, $CellContext`stable$$ = True, 
     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`Lcc$$], 11, 100}, {
       Hold[$CellContext`nn$$], 1, 200}, {
+      Hold[CloudObject`Private`botType$$], {"fixed", "chain", "legs"}}, {
       Hold[$CellContext`savematerial$$], {True, False}}, {
       Hold[$CellContext`rail$$], {True, False}}, {
       Hold[$CellContext`stable$$], {False, True}}, {
       Hold[CloudObject`Private`overhanging$$], {False, True}}}, 
-    Typeset`size$$ = {407., {201., 208.}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {374., {41., 48.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    False, $CellContext`Lcc$39688$$ = 0, $CellContext`nn$39689$$ = 
-    0, $CellContext`savematerial$39690$$ = False, $CellContext`rail$39691$$ = 
-    False, $CellContext`stable$39692$$ = False, 
-    CloudObject`Private`overhanging$39693$$ = False}, 
+    False, $CellContext`Lcc$44557$$ = 0, $CellContext`nn$44558$$ = 0, 
+    CloudObject`Private`botType$44559$$ = 
+    0, $CellContext`savematerial$44560$$ = False, $CellContext`rail$44561$$ = 
+    False, $CellContext`stable$44562$$ = False, 
+    CloudObject`Private`overhanging$44563$$ = False}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`Lcc$$ = 11, $CellContext`nn$$ = 1, 
-        CloudObject`Private`overhanging$$ = False, $CellContext`rail$$ = 
-        True, $CellContext`savematerial$$ = True, $CellContext`stable$$ = 
-        False}, "ControllerVariables" :> {
-        Hold[$CellContext`Lcc$$, $CellContext`Lcc$39688$$, 0], 
-        Hold[$CellContext`nn$$, $CellContext`nn$39689$$, 0], 
-        Hold[$CellContext`savematerial$$, $CellContext`savematerial$39690$$, 
+      "Variables" :> {
+       CloudObject`Private`botType$$ = "fixed", $CellContext`Lcc$$ = 
+        11, $CellContext`nn$$ = 1, CloudObject`Private`overhanging$$ = 
+        False, $CellContext`rail$$ = True, $CellContext`savematerial$$ = 
+        True, $CellContext`stable$$ = False}, "ControllerVariables" :> {
+        Hold[$CellContext`Lcc$$, $CellContext`Lcc$44557$$, 0], 
+        Hold[$CellContext`nn$$, $CellContext`nn$44558$$, 0], 
+        Hold[
+        CloudObject`Private`botType$$, CloudObject`Private`botType$44559$$, 
+         0], 
+        Hold[$CellContext`savematerial$$, $CellContext`savematerial$44560$$, 
          False], 
-        Hold[$CellContext`rail$$, $CellContext`rail$39691$$, False], 
-        Hold[$CellContext`stable$$, $CellContext`stable$39692$$, False], 
+        Hold[$CellContext`rail$$, $CellContext`rail$44561$$, False], 
+        Hold[$CellContext`stable$$, $CellContext`stable$44562$$, False], 
         Hold[
         CloudObject`Private`overhanging$$, 
-         CloudObject`Private`overhanging$39693$$, False]}, 
+         CloudObject`Private`overhanging$44563$$, False]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -538,24 +598,27 @@ Cell[BoxData[
          $CellContext`AffordableFrame[$CellContext`Lcc$$, 
           10, $CellContext`nn$$, 1000, 
           40, $CellContext`t, $CellContext`rail$$, $CellContext`stable$$, 
-          CloudObject`Private`overhanging$$, $CellContext`savematerial$$], 
+          CloudObject`Private`overhanging$$, 
+          CloudObject`Private`botType$$, $CellContext`savematerial$$], 
          1], {$CellContext`t, 
          0, ($CellContext`nn$$ - 1) $CellContext`Lcc$$ + ($CellContext`Lcc$$ - 
           10), Appearance -> "Labeled"}, 
         Initialization :> {$CellContext`t = 0}, AnimationRunning -> False, 
         AnimationDirection -> ForwardBackward], 
       "Specifications" :> {{$CellContext`Lcc$$, 11, 100}, {$CellContext`nn$$, 
-         1, 200}, {$CellContext`savematerial$$, {
+         1, 200}, {
+        CloudObject`Private`botType$$, {
+         "fixed", "chain", "legs"}}, {$CellContext`savematerial$$, {
          True, False}}, {$CellContext`rail$$, {
          True, False}}, {$CellContext`stable$$, {False, True}}, {
         CloudObject`Private`overhanging$$, {False, True}}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{454., {294., 301.}},
+     ImageSizeCache->{421., {148., 155.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
-    Initialization:>({$CellContext`nn$$ = 5, $CellContext`Lcc$$ = 30}; 
-     Typeset`initDone$$ = True),
+    Initialization:>({$CellContext`nn$$ = 5, $CellContext`Lcc$$ = 
+       30, $CellContext`savematerial$$ = False}; Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -576,8 +639,1211 @@ Cell[BoxData[
    3.868252208660784*^9, 3.8682522139536943`*^9}, {3.86825224563048*^9, 
    3.868252252435742*^9}, {3.868252321562017*^9, 3.868252322602818*^9}, {
    3.868252432970595*^9, 3.8682524440334463`*^9}, {3.86825249999056*^9, 
-   3.868252520788156*^9}},
- CellLabel->"Out[37]=",ExpressionUUID->"82aab2fa-8103-4399-9268-5d1a99f30d6a"]
+   3.868252520788156*^9}, 3.868252885104067*^9, 3.868252966379874*^9, {
+   3.8682530170722427`*^9, 3.8682530356811666`*^9}, 3.868253538267823*^9, 
+   3.8682540494899817`*^9, {3.868254156889161*^9, 3.868254184301401*^9}, {
+   3.8682574390232267`*^9, 3.8682574416495543`*^9}},
+ CellLabel->"Out[46]=",ExpressionUUID->"08679a46-3d61-4ad0-a449-a2c58f13ee15"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"AffordableFrameChainSingleSide", "[", 
+    RowBox[{
+    "wheelDia_", ",", " ", "workingLen_", ",", " ", "robotWidth_", ",", " ", 
+     "offsetXParams_", ",", "legOffset_", ",", "side_", ",", " ", "x_", ",", 
+     "numlegSets_", ",", "botType_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"wheelRadius", "=", 
+        RowBox[{"wheelDia", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"wheelThickness", " ", "=", " ", "5"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"legLen", " ", "=", " ", "30"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"divisions1", " ", "=", " ", 
+        RowBox[{
+         FractionBox["2", "3"], 
+         RowBox[{"(", 
+          RowBox[{"workingLen", " ", "+", 
+           RowBox[{"(", " ", 
+            RowBox[{"Pi", " ", "*", " ", 
+             RowBox[{"wheelDia", "/", "2"}]}], ")"}], "+", 
+           RowBox[{"2", "*", 
+            RowBox[{"wheelDia", "/", "2"}]}]}], ")"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"offsetY", " ", "=", " ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"side", "\[Equal]", "\"\<right\>\""}], ",", 
+          RowBox[{"robotWidth", "/", "2"}], ",", " ", 
+          RowBox[{
+           RowBox[{"-", "robotWidth"}], "/", "2"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "}"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"digitalX", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"digitalX", " ", "=", " ", 
+        RowBox[{"Floor", "[", 
+         FractionBox["x", 
+          RowBox[{"divisions1", "/", "2"}]], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"sideStartX", " ", "=", " ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"side", "\[Equal]", "\"\<right\>\""}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{"digitalX", ",", "2"}], "]"}], "==", "0"}], ",", 
+            RowBox[{"digitalX", "+", "1"}], ",", "digitalX"}], "]"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"Add", " ", "1", " ", "if", " ", "even"}], "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{"digitalX", ",", "2"}], "]"}], "!=", "0"}], ",", 
+            RowBox[{"digitalX", "+", "1"}], ",", "digitalX"}], "]"}]}], 
+         RowBox[{"(*", 
+          RowBox[{"Add", " ", "1", " ", "if", " ", "odd"}], "*)"}], 
+         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"sideStartX", " ", "=", 
+        RowBox[{"sideStartX", "*", 
+         FractionBox["divisions1", "2"]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"side", "\[Equal]", "\"\<right\>\""}], ",", 
+         RowBox[{"sideStartX", "-=", 
+          FractionBox["divisions1", "2"]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"sideStartXCompare", " ", "=", " ", "sideStartX"}], ";"}], 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"digitalX", ",", "2"}], "]"}], "==", "0"}], " ", "&&", 
+          " ", 
+          RowBox[{"side", "\[Equal]", "\"\<left\>\""}]}], ",", 
+         RowBox[{"sideStartX", "+=", 
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"x", ",", 
+             RowBox[{"divisions1", "/", "2"}]}], "]"}], "*", "2"}]}]}], "]"}],
+        ";", 
+       RowBox[{"(*", 
+        RowBox[{"Even", " ", "and", " ", "left"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"digitalX", ",", "2"}], "]"}], "!=", "0"}], " ", "&&", 
+          " ", 
+          RowBox[{"side", "\[Equal]", "\"\<right\>\""}]}], ",", 
+         RowBox[{"sideStartX", "+=", 
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"x", ",", 
+             RowBox[{"divisions1", "/", "2"}]}], "]"}], "*", "2"}]}]}], "]"}],
+        ";", 
+       RowBox[{"(*", 
+        RowBox[{"Odd", " ", "and", " ", "right"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"dontRotateLegs", " ", "=", " ", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"sideStartXCompare", "!=", "sideStartX"}], ",", "True", 
+            ",", " ", "False"}], "]"}]}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"offsetX", "=", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"offsetXParams", "\[Equal]", "False"}], ",", "0", ",", 
+           FractionBox["divisions1", "2"]}], "]"}], "+", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"botType", "\[Equal]", "\"\<Normal\>\""}], ",", "x", ",", 
+           "sideStartX"}], " ", "]"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"legOffsetY", " ", "=", " ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"legOffset", "\[Equal]", "True"}], ",", "offsetY", ",", 
+          RowBox[{"offsetY", "+", 
+           FractionBox["divisions1", "2"]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"chainRadius", " ", "=", " ", 
+        RowBox[{"wheelThickness", "/", "2"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"wheelSide1StartX", " ", "=", " ", "offsetX"}], ";", " ", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Calculate", " ", "from", " ", "X", " ", "and", " ", "offset"}], 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"wheelSide1EndX", " ", "=", " ", 
+        RowBox[{
+        "wheelSide1StartX", " ", "+", " ", "wheelDia", " ", "+", " ", 
+         "workingLen"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"wheel1", " ", "=", " ", 
+        RowBox[{"Cylinder", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"wheelSide1StartX", ",", "offsetY", ",", "0"}], "}"}], 
+            ",", 
+            RowBox[{"{", 
+             RowBox[{"wheelSide1StartX", ",", 
+              RowBox[{"offsetY", "+", "wheelThickness"}], ",", "0"}], "}"}]}],
+            "}"}], ",", "wheelRadius"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{"wheel2", " ", "=", " ", 
+        RowBox[{"Cylinder", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"wheelSide1EndX", ",", "offsetY", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"wheelSide1EndX", ",", 
+              RowBox[{"offsetY", "+", "wheelThickness"}], ",", "0"}], "}"}]}],
+            "}"}], ",", "wheelRadius"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       
+       RowBox[{"axleSide1StartX", " ", "=", " ", 
+        RowBox[{"wheelSide1StartX", "-", 
+         RowBox[{"wheelDia", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"axleSide1StartY", " ", "=", " ", 
+        RowBox[{"offsetY", "+", 
+         RowBox[{"-", "5"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"axleSide1StartZ", " ", "=", " ", 
+        RowBox[{"-", "5"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"axleSide1EndX", " ", "=", " ", 
+        RowBox[{"wheelSide1EndX", "+", 
+         RowBox[{"wheelDia", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"side1Axle", " ", "=", " ", 
+        RowBox[{"Cuboid", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+           "axleSide1StartX", ",", "axleSide1StartY", ",", 
+            "axleSide1StartZ"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"axleSide1EndX", ",", 
+            RowBox[{"axleSide1StartY", "+", "15"}], ",", 
+            RowBox[{"axleSide1StartZ", "+", "15"}]}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"side1BottomChain", " ", "=", " ", 
+        RowBox[{"Cylinder", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"wheelSide1StartX", ",", 
+              RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "wheelDia"}], "/", "2"}], "+", "chainRadius"}]}],
+              "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"wheelSide1EndX", ",", 
+              RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "wheelDia"}], "/", "2"}], "+", "chainRadius"}]}],
+              "}"}]}], "}"}], ",", "chainRadius"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"side1TopChain", " ", "=", " ", 
+        RowBox[{"Cylinder", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"wheelSide1StartX", ",", 
+              RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"+", "wheelDia"}], "/", "2"}], "-", "chainRadius"}]}],
+              "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"wheelSide1EndX", ",", 
+              RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"+", "wheelDia"}], "/", "2"}], "-", "chainRadius"}]}],
+              "}"}]}], "}"}], ",", "chainRadius"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"wheels1Pos1", " ", "=", " ", 
+          RowBox[{"wheelSide1StartX", " ", "+", "wheelRadius", "+", " ", 
+           FractionBox["workingLen", "2"], "-", 
+           RowBox[{"divisions1", "/", "2"}]}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"wheels1Pos2", " ", "=", " ", 
+          RowBox[{"wheels1Pos1", " ", "+", " ", "divisions1"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"wheels1Pos3", " ", "=", " ", 
+          RowBox[{"divisions1", " ", "-", 
+           RowBox[{"(", 
+            RowBox[{"wheels1Pos1", "-", "wheelSide1StartX"}], ")"}], "-", 
+           RowBox[{"Pi", " ", "*", " ", "wheelRadius"}], "+", 
+           "wheelSide1StartX"}]}], ";"}], "*)"}], 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"wheelRadius", "+", " ", 
+            FractionBox["workingLen", "2"], "+", 
+            RowBox[{"Pi", " ", "*", " ", "wheelRadius"}]}], ")"}], "+", 
+          "wheelSide1StartX"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Rotate", " ", "by", " ", "angle"}], ",", " ", 
+         RowBox[{"or", " ", "calculate", " ", "angle"}]}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"RotateChaininAir", "[", 
+         RowBox[{"legPos_", ",", " ", "thetaParam_"}], "]"}], ":=", 
+        RowBox[{"With", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"chainCenter", " ", "=", 
+             RowBox[{"wheelSide1StartX", " ", "+", "wheelRadius", "+", " ", 
+              FractionBox["workingLen", "2"]}]}], ",", "\[IndentingNewLine]", 
+            
+            RowBox[{"theta", " ", "=", " ", 
+             RowBox[{"Mod", "[", 
+              RowBox[{"thetaParam", " ", ",", "360"}], "]"}]}]}], 
+           "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"posX", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", 
+           RowBox[{"legStartZ", " ", "=", " ", 
+            RowBox[{
+             RowBox[{"wheelDia", "/", "2"}], "+", "legLen"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"legStopZ", " ", "=", " ", 
+            RowBox[{"wheelDia", "/", "2"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"theta", " ", "\[GreaterEqual]", "0"}], ",", " ", 
+             "theta", ",", 
+             RowBox[{
+              RowBox[{"theta", " ", "=", 
+               RowBox[{"360", "+", "theta"}]}], ";"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"posX", "=", 
+            RowBox[{"legPos", "+", 
+             RowBox[{
+              FractionBox["theta", "360"], "*", "2", 
+              RowBox[{"(", 
+               RowBox[{"workingLen", " ", "+", 
+                RowBox[{"(", " ", 
+                 RowBox[{"Pi", " ", "*", " ", 
+                  RowBox[{"wheelDia", "/", "2"}]}], ")"}], "+", 
+                RowBox[{"2", "*", 
+                 RowBox[{"wheelDia", "/", "2"}]}]}], ")"}]}]}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"posXEnd", " ", "=", " ", "posX"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"posX", " ", ">", "wheelSide1EndX"}], ",", 
+             RowBox[{"(*", 
+              RowBox[{
+              "1.", " ", "Gets", " ", "to", " ", "right", " ", "radius"}], 
+              "*)"}], "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"posX", " ", ">", " ", 
+                RowBox[{"wheelSide1EndX", "+", 
+                 RowBox[{"Pi", " ", "*", " ", "wheelRadius"}]}]}], ",", 
+               RowBox[{"(*", 
+                RowBox[{"2.", " ", "Goes", " ", "beyond", " ", "radius"}], 
+                "*)"}], "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"posX", " ", ">", 
+                   RowBox[{"wheelSide1EndX", "+", 
+                    RowBox[{"Pi", " ", "*", " ", "wheelRadius"}], "+", 
+                    "workingLen", " ", "+", " ", 
+                    RowBox[{"2", " ", "*", " ", "wheelRadius"}]}]}], ",", 
+                  RowBox[{"(*", 
+                   RowBox[{
+                   "3.", " ", "Gets", " ", "to", " ", "second", " ", 
+                    "radius"}], "*)"}], "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"posX", " ", ">", 
+                    RowBox[{"wheelSide1EndX", "+", 
+                    RowBox[{"Pi", " ", "*", " ", "wheelRadius"}], "+", 
+                    "workingLen", " ", "+", " ", 
+                    RowBox[{"2", " ", "*", " ", "wheelRadius"}], "+", 
+                    RowBox[{"Pi", "*", "wheelRadius"}]}]}], ",", 
+                    RowBox[{"(*", 
+                    RowBox[{
+                    "4.", " ", "Goes", " ", "beyond", " ", "second", " ", 
+                    "radius"}], "*)"}], "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"posX", " ", "-=", " ", 
+                    RowBox[{"wheelSide1EndX", "+", 
+                    RowBox[{"Pi", " ", "*", " ", "wheelRadius"}], "+", 
+                    "workingLen", " ", "+", " ", 
+                    RowBox[{"2", " ", "*", " ", "wheelRadius"}], "+", 
+                    RowBox[{"Pi", "*", "wheelRadius"}]}]}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"posX", "+=", "wheelSide1StartX"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"posXEnd", " ", "=", " ", "posX"}], ";"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"(*", 
+                    RowBox[{
+                    "4.", " ", "Remains", " ", "with", " ", "second", " ", 
+                    RowBox[{"radius", ".", " ", "Get"}], " ", "rotation", " ",
+                     "within", " ", "second", " ", "radius"}], "*)"}], 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"remainder", " ", "=", 
+                    RowBox[{"posX", "-", " ", 
+                    RowBox[{"(", " ", 
+                    RowBox[{"wheelSide1EndX", "+", 
+                    RowBox[{"Pi", " ", "*", " ", "wheelRadius"}], "+", 
+                    "workingLen", " ", "+", " ", 
+                    RowBox[{"2", " ", "*", " ", "wheelRadius"}]}], ")"}]}]}], 
+                    ";", "\[IndentingNewLine]", 
+                    RowBox[{"covereredAngle", " ", "=", " ", 
+                    RowBox[{
+                    FractionBox["remainder", 
+                    RowBox[{"Pi", " ", "*", " ", "wheelRadius"}]], "*", 
+                    "Pi"}]}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"tmpPos", " ", "=", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"RotationMatrix", "[", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "/", "2"}], ")"}]}], " ", "-", " ", 
+                    "covereredAngle"}], " ", "]"}], ".", 
+                    RowBox[{"{", 
+                    RowBox[{"wheelRadius", ",", "0"}], "}"}]}], ")"}], " ", 
+                    "+", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"wheelSide1StartX", ",", "0"}], "}"}]}], ")"}]}], 
+                    ";", "\[IndentingNewLine]", 
+                    RowBox[{"legStartZ", " ", "=", " ", 
+                    RowBox[{"tmpPos", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"posX", " ", "=", "  ", 
+                    RowBox[{"tmpPos", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"tmpPos", " ", "=", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"RotationMatrix", "[", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "/", "2"}], ")"}]}], " ", "-", " ", 
+                    "covereredAngle"}], " ", "]"}], ".", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"wheelRadius", "+", "legLen"}], ",", "0"}], 
+                    "}"}]}], ")"}], " ", "+", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"wheelSide1StartX", ",", "0"}], "}"}]}], ")"}]}], 
+                    ";", "\[IndentingNewLine]", 
+                    RowBox[{"posXEnd", " ", "=", " ", 
+                    RowBox[{"tmpPos", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"legStopZ", "=", " ", 
+                    RowBox[{"tmpPos", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], ";"}]}], 
+                    "\[IndentingNewLine]", "]"}], ";"}], 
+                  "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+                  RowBox[{"(*", 
+                   RowBox[{
+                   "3.", " ", "Does", " ", "not", " ", "get", " ", "to", " ", 
+                    "second", " ", "radius"}], "*)"}], "\[IndentingNewLine]", 
+                  " ", 
+                  RowBox[{
+                   RowBox[{"remainder", " ", "=", 
+                    RowBox[{"posX", " ", "-", " ", 
+                    RowBox[{"(", " ", 
+                    RowBox[{"wheelSide1EndX", "+", 
+                    RowBox[{"Pi", " ", "*", " ", "wheelRadius"}]}], ")"}]}]}],
+                    ";", "\[IndentingNewLine]", 
+                   RowBox[{"posX", " ", "=", " ", 
+                    RowBox[{"wheelSide1EndX", "-", "remainder"}]}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"posXEnd", " ", "=", " ", "posX"}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"legStartZ", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "wheelDia"}], "/", "2"}], "-", "legLen"}]}], 
+                   ";", "\[IndentingNewLine]", 
+                   RowBox[{"legStopZ", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{"-", "wheelDia"}], "/", "2"}]}]}]}], 
+                 "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+               ",", 
+               RowBox[{"(*", 
+                RowBox[{"2.", " ", "within", " ", "Radius"}], "*)"}], 
+               "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"remainder", " ", "=", " ", 
+                 RowBox[{"posX", "-", "  ", "wheelSide1EndX"}]}], ";", " ", 
+                RowBox[{"(*", 
+                 RowBox[{"Calculate", " ", "the", " ", "rotation"}], "*)"}], 
+                "\[IndentingNewLine]", 
+                RowBox[{"covereredAngle", " ", "=", " ", 
+                 RowBox[{
+                  FractionBox["remainder", 
+                   RowBox[{"Pi", " ", "*", " ", "wheelRadius"}]], "*", 
+                  "Pi"}]}], ";", "\[IndentingNewLine]", 
+                RowBox[{"tmpPos", " ", "=", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"RotationMatrix", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "/", "2"}], ")"}], " ", "-", " ", 
+                    "covereredAngle"}], " ", "]"}], ".", 
+                    RowBox[{"{", 
+                    RowBox[{"wheelRadius", ",", "0"}], "}"}]}], ")"}], " ", 
+                   "+", " ", 
+                   RowBox[{"{", 
+                    RowBox[{"wheelSide1EndX", ",", "0"}], "}"}]}], ")"}]}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"legStartZ", " ", "=", " ", 
+                 RowBox[{"tmpPos", "[", 
+                  RowBox[{"[", "2", "]"}], "]"}]}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"posX", " ", "=", "  ", 
+                 RowBox[{"tmpPos", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"tmpPos", " ", "=", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"RotationMatrix", "[", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Pi", "/", "2"}], ")"}], " ", "-", " ", 
+                    "covereredAngle"}], " ", "]"}], ".", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"wheelRadius", "+", "legLen"}], ",", "0"}], 
+                    "}"}]}], ")"}], " ", "+", " ", 
+                   RowBox[{"{", 
+                    RowBox[{"wheelSide1EndX", ",", "0"}], "}"}]}], ")"}]}], 
+                ";", "\[IndentingNewLine]", 
+                RowBox[{"posXEnd", " ", "=", " ", 
+                 RowBox[{"tmpPos", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"legStopZ", "=", " ", 
+                 RowBox[{"tmpPos", "[", 
+                  RowBox[{"[", "2", "]"}], "]"}]}], ";"}]}], 
+              "\[IndentingNewLine]", "]"}]}], 
+            RowBox[{"(*", 
+             RowBox[{
+              RowBox[{
+              "1.", " ", "It", " ", "does", " ", "not", " ", "get", " ", "to",
+                " ", "the", " ", "radius"}], "..."}], "*)"}], 
+            "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"posX", ",", 
+               RowBox[{"offsetY", "+", "chainRadius"}], ",", "legStartZ"}], 
+              "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"posXEnd", ",", 
+               RowBox[{"offsetY", "+", "chainRadius"}], ",", "legStopZ"}], 
+              "}"}]}], "}"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+       RowBox[{"(*", 
+        RowBox[{"End", " ", "of", " ", "module"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"chainCenter", " ", "=", 
+        RowBox[{"wheelSide1StartX", " ", "+", "wheelRadius", "+", " ", 
+         FractionBox["workingLen", "2"]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"startLegAngle", " ", "=", " ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"legOffset", "\[Equal]", "True"}], " ", "&&", " ", 
+           RowBox[{"side", "\[Equal]", "\"\<right\>\""}]}], ",", "180", ",", 
+          "0"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"chainLength", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"2", "*", "workingLen"}], " ", "+", " ", 
+         RowBox[{"4", "*", "wheelRadius"}], " ", "+", " ", 
+         RowBox[{"2", " ", "*", " ", "Pi", " ", "*", "wheelRadius"}]}]}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"botType", "==", "\"\<Normal\>\""}], " ", "||", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{"digitalX", ",", "2"}], "]"}], "==", "0"}], " ", "&&", 
+            " ", 
+            RowBox[{"side", "\[Equal]", "\"\<left\>\""}]}], ")"}], "||", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{"digitalX", ",", "2"}], "]"}], "!=", "0"}], " ", "&&", 
+            " ", 
+            RowBox[{"side", "\[Equal]", "\"\<right\>\""}]}], ")"}]}], ",", 
+         RowBox[{
+          RowBox[{"startLegAngle", "+=", 
+           RowBox[{
+            FractionBox[
+             RowBox[{"Mod", "[", 
+              RowBox[{"x", ",", "chainLength"}], "]"}], "chainLength"], "*", 
+            "360"}]}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"wheels1Pos1", " ", "=", " ", 
+        RowBox[{"RotateChaininAir", "[", 
+         RowBox[{"chainCenter", ",", "startLegAngle"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"wheels1Pos2", " ", "=", " ", 
+        RowBox[{"RotateChaininAir", "[", 
+         RowBox[{"chainCenter", ",", 
+          RowBox[{"startLegAngle", "+", "120"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"wheels1Pos3", " ", "=", " ", 
+        RowBox[{"RotateChaininAir", "[", 
+         RowBox[{"chainCenter", ",", 
+          RowBox[{"startLegAngle", "+", "240"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"wheels1Leg1", " ", "=", " ", 
+        RowBox[{"Cylinder", "[", 
+         RowBox[{"wheels1Pos1", ",", "chainRadius"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"wheels1Leg2", "  ", "=", " ", 
+        RowBox[{"Cylinder", "[", 
+         RowBox[{"wheels1Pos2", ",", "chainRadius"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"wheels1Leg3", " ", "=", " ", 
+        RowBox[{"Cylinder", "[", 
+         RowBox[{"wheels1Pos3", ",", "chainRadius"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"numlegSets", " ", ">", "1"}], ",", 
+         RowBox[{
+          RowBox[{"wheels1Leg1", " ", "=", " ", 
+           RowBox[{"{", "wheels1Leg1", "}"}]}], ";", 
+          RowBox[{"wheels1Leg2", " ", "=", " ", 
+           RowBox[{"{", "wheels1Leg2", "}"}]}], ";", 
+          RowBox[{"wheels1Leg3", " ", "=", " ", 
+           RowBox[{"{", "wheels1Leg3", "}"}]}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"legColors", " ", "=", " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "Magenta", ",", "Red", ",", " ", "Black", ",", " ", "Yellow", ",", 
+          " ", "Green", ",", " ", "Cyan", ",", " ", "Orange", ",", "White", 
+          ",", "Brown", ",", "Red"}], "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "2"}], ",", 
+         RowBox[{"i", "\[LessEqual]", "numlegSets"}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"startLegAngle", " ", "+=", " ", 
+           RowBox[{"120", "/", "numlegSets"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"tmp", " ", "=", " ", 
+           RowBox[{"RotateChaininAir", "[", 
+            RowBox[{"chainCenter", ",", "startLegAngle"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"wheels1Leg1", " ", "=", " ", 
+           RowBox[{"Join", "[", 
+            RowBox[{"wheels1Leg1", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"legColors", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", "-", "1"}], "]"}], "]"}], ",", 
+               RowBox[{"Cylinder", "[", 
+                RowBox[{"tmp", ",", "chainRadius"}], "]"}]}], "}"}]}], 
+            "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"tmp", " ", "=", " ", 
+           RowBox[{"RotateChaininAir", "[", 
+            RowBox[{"chainCenter", ",", 
+             RowBox[{"startLegAngle", "+", "120"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"wheels1Leg2", " ", "=", " ", 
+           RowBox[{"Join", "[", 
+            RowBox[{"wheels1Leg2", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"legColors", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", "-", "1"}], "]"}], "]"}], ",", 
+               RowBox[{"Cylinder", "[", 
+                RowBox[{"tmp", ",", "chainRadius"}], "]"}]}], "}"}]}], 
+            "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"tmp", " ", "=", " ", 
+           RowBox[{"RotateChaininAir", "[", 
+            RowBox[{"chainCenter", ",", 
+             RowBox[{"startLegAngle", "+", "240"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"wheels1Leg3", " ", "=", " ", 
+           RowBox[{"Join", "[", 
+            RowBox[{"wheels1Leg3", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"legColors", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", "-", "1"}], "]"}], "]"}], ",", 
+               RowBox[{"Cylinder", "[", 
+                RowBox[{"tmp", ",", "chainRadius"}], "]"}]}], "}"}]}], 
+            "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"wheels1Leg1", " ", "=", " ", 
+          RowBox[{"Cylinder", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"wheels1Pos1", ",", 
+                RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"-", "wheelDia"}], "/", "2"}], "-", "legLen"}]}], 
+               "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"wheels1Pos1", ",", 
+                RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+                RowBox[{
+                 RowBox[{"-", "wheelDia"}], "/", "2"}]}], "}"}]}], "}"}], ",",
+             "chainRadius"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"wheels1Leg2", " ", "=", " ", 
+          RowBox[{"Cylinder", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"wheels1Pos2", ",", 
+                RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"-", "wheelDia"}], "/", "2"}], "-", "legLen"}]}], 
+               "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"wheels1Pos2", ",", 
+                RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+                RowBox[{
+                 RowBox[{"-", "wheelDia"}], "/", "2"}]}], "}"}]}], "}"}], ",",
+             "chainRadius"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"wheels1Leg3", " ", "=", " ", 
+          RowBox[{"Cylinder", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"wheels1Pos3", ",", 
+                RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+                RowBox[{
+                 RowBox[{"wheelDia", "/", "2"}], "+", "legLen"}]}], "}"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"wheels1Pos3", ",", 
+                RowBox[{"offsetY", "+", "chainRadius"}], ",", 
+                RowBox[{"wheelDia", "/", "2"}]}], "}"}]}], "}"}], ",", 
+            "chainRadius"}], "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"crossSlide", " ", "=", " ", 
+        RowBox[{"Cuboid", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             FractionBox[
+              RowBox[{"wheelSide1StartX", "+", "wheelSide1EndX"}], "2"], "-", 
+             "7.5"}], ",", 
+            RowBox[{
+             RowBox[{"-", "robotWidth"}], "/", "2"}], ",", 
+            RowBox[{"-", "7.5"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             FractionBox[
+              RowBox[{"wheelSide1StartX", "+", "wheelSide1EndX"}], "2"], "+", 
+             "7.5"}], ",", 
+            RowBox[{"robotWidth", "/", "2"}], ",", "7.5"}], "}"}]}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"botType", "!=", "\"\<Normal\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"crossSlide", " ", "=", " ", 
+           RowBox[{"Cuboid", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                FractionBox["workingLen", "2"], "+", "wheelRadius", "+", "x", 
+                "-", "7.5"}], ",", 
+               RowBox[{
+                RowBox[{"-", "robotWidth"}], "/", "2"}], ",", 
+               RowBox[{"-", "7.5"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                FractionBox["workingLen", "2"], "+", "wheelRadius", "+", "x", 
+                "+", "7.5"}], ",", 
+               RowBox[{"robotWidth", "/", "2"}], ",", "7.5"}], "}"}]}], 
+            "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"side1Wheels", " ", "="}], " ", "*)"}], 
+       RowBox[{"{", 
+        RowBox[{"wheel1", ",", " ", "wheel2", ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"side", "\[Equal]", "\"\<right\>\""}], ",", "Blue", ",", 
+           "Green"}], "]"}], ",", "side1Axle", ",", " ", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"side", "\[Equal]", "\"\<right\>\""}], ",", "Red", ",", 
+           "Cyan"}], "]"}], ",", " ", "side1BottomChain", ",", 
+         "side1TopChain", ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"side", "\[Equal]", "\"\<right\>\""}], ",", " ", "Yellow", 
+           ",", "White"}], "]"}], ",", " ", "wheels1Leg1", ",", "wheels1Leg2",
+          ",", "wheels1Leg3", ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"side", "\[Equal]", "\"\<right\>\""}], ",", "crossSlide"}],
+           "]"}]}], "}"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "}"}]}], "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AffordableFrameChain", "[", 
+   RowBox[{
+   "wheelDia_", ",", " ", "workingLen_", ",", " ", "robotWidth_", " ", ",", 
+    "botType_", ",", "legOffset_", ",", "x_", ",", "numlegSets_", ",", 
+    "workspaceLength_"}], "]"}], ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"wheelRadius", "=", 
+       RowBox[{"wheelDia", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"wheelThickness", " ", "=", " ", "5"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"legLen", " ", "=", " ", "30"}], ","}], "\[IndentingNewLine]", 
+     "}"}], ",", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"side1Wheels", " ", "=", " ", 
+       RowBox[{"AffordableFrameChainSingleSide", "[", 
+        RowBox[{
+        "wheelDia", ",", " ", "workingLen", ",", " ", "robotWidth", ",", " ", 
+         "False", ",", "False", ",", "\"\<left\>\"", " ", ",", "x", ",", 
+         "numlegSets", ",", "botType"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"side2Wheels", " ", "=", " ", 
+       RowBox[{"AffordableFrameChainSingleSide", "[", 
+        RowBox[{
+        "wheelDia", ",", " ", "workingLen", ",", " ", "robotWidth", ",", " ", 
+         
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"botType", "\[Equal]", "\"\<Normal\>\""}], ",", "False", 
+           ",", " ", "True"}], "]"}], ",", "legOffset", ",", "\"\<right\>\"", 
+         ",", " ", "x", ",", "numlegSets", ",", "botType"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Graphics3D", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Join", "[", 
+         RowBox[{"side1Wheels", ",", "side2Wheels", ",", 
+          RowBox[{"{", 
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"workspaceLength", ",", "0", ",", "0"}], "}"}]}], 
+             "}"}], "]"}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Axes", "\[Rule]", "True"}], "}"}]}], "\[IndentingNewLine]", 
+       "]"}]}], "\[IndentingNewLine]", "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.868255111890033*^9, 3.868255844258963*^9}, {
+   3.868255885571148*^9, 3.868256008136121*^9}, {3.8682560600519543`*^9, 
+   3.8682561073155737`*^9}, {3.868256241595703*^9, 3.868256316528858*^9}, {
+   3.868256379299734*^9, 3.868256410996242*^9}, {3.86825646336674*^9, 
+   3.868256541925014*^9}, {3.8682565719930763`*^9, 3.86825661323914*^9}, {
+   3.868256952586236*^9, 3.868257066957061*^9}, {3.8682571083667727`*^9, 
+   3.868257127990568*^9}, {3.8682633528612947`*^9, 3.8682635533804092`*^9}, {
+   3.868263592773275*^9, 3.8682636410817223`*^9}, {3.868263687665782*^9, 
+   3.86826370952602*^9}, {3.8682637517330093`*^9, 3.8682638039917707`*^9}, {
+   3.86826389175943*^9, 3.868263913424629*^9}, {3.868263952153316*^9, 
+   3.8682639616221933`*^9}, {3.86826404379521*^9, 3.8682641203883133`*^9}, {
+   3.868264166346382*^9, 3.868264185430819*^9}, 3.868264326943638*^9, {
+   3.8682643924245443`*^9, 3.868264473436851*^9}, {3.868268477169035*^9, 
+   3.868268534561109*^9}, {3.8682685650650663`*^9, 3.8682687761619043`*^9}, {
+   3.868268825498914*^9, 3.868268973690948*^9}, {3.868269020714469*^9, 
+   3.868269075729788*^9}, {3.868269106873905*^9, 3.868269179846468*^9}, {
+   3.868269212495304*^9, 3.8682693677968197`*^9}, {3.8682699270912123`*^9, 
+   3.868269978185005*^9}, {3.86827816469699*^9, 3.868278165367668*^9}, {
+   3.868278249331799*^9, 3.8682782815320044`*^9}, {3.868278335552623*^9, 
+   3.8682783363846397`*^9}, {3.8682783915565443`*^9, 3.868278445970234*^9}, {
+   3.868278571705205*^9, 3.8682786467034082`*^9}, {3.868278700143271*^9, 
+   3.8682787375839157`*^9}, 3.868278792086438*^9, {3.868278854428135*^9, 
+   3.868278900056101*^9}, {3.86827904139585*^9, 3.868279042167469*^9}, {
+   3.868279183300879*^9, 3.8682793211835814`*^9}, {3.868279356124102*^9, 
+   3.868279360135746*^9}, {3.868279475855253*^9, 3.86827961387708*^9}, {
+   3.868279643942812*^9, 3.868279901641539*^9}, {3.868280112639462*^9, 
+   3.868280112800233*^9}, {3.868280153496437*^9, 3.868280168239051*^9}, {
+   3.868280207424864*^9, 3.8682802731246853`*^9}, {3.868280307819242*^9, 
+   3.868280968560849*^9}, {3.868281045039297*^9, 3.868281145658272*^9}, {
+   3.868281177910923*^9, 3.8682812761087093`*^9}, {3.868281314340414*^9, 
+   3.868281323671507*^9}, {3.868281384161726*^9, 3.868281429203545*^9}, {
+   3.868281507848372*^9, 3.868281548966859*^9}, {3.868281623589157*^9, 
+   3.868281703634657*^9}, {3.868281767343088*^9, 3.868281839877716*^9}, 
+   3.868281878272861*^9, {3.868281967418701*^9, 3.868282056085218*^9}, {
+   3.8682820869811573`*^9, 3.868282088250499*^9}, {3.868282155903103*^9, 
+   3.8682821951256723`*^9}, {3.868282312165524*^9, 3.868282316856307*^9}, {
+   3.868282418849099*^9, 3.8682825063053627`*^9}, {3.868282616052225*^9, 
+   3.868282774396346*^9}, {3.8682828482700644`*^9, 3.8682828515049543`*^9}, {
+   3.868282927108109*^9, 3.868282934548169*^9}, {3.868282965291317*^9, 
+   3.868283014899041*^9}, {3.868283059609338*^9, 3.8682831016929007`*^9}, {
+   3.8682831659087*^9, 3.868283198051008*^9}, {3.868283228557912*^9, 
+   3.868283283697006*^9}, {3.868283362660861*^9, 3.868283367161408*^9}, {
+   3.868283467619617*^9, 3.868283467965509*^9}, {3.8682835118361998`*^9, 
+   3.868283542233478*^9}, {3.868283579198285*^9, 3.8682835869758797`*^9}, {
+   3.868283710085277*^9, 3.868283714004573*^9}, {3.868283760841983*^9, 
+   3.8682837915323467`*^9}, {3.868283887543953*^9, 3.868283893271599*^9}, {
+   3.868283926612707*^9, 3.8682839701593113`*^9}, {3.868284018324391*^9, 
+   3.8682841075503283`*^9}, {3.8682841868309*^9, 3.868284201475873*^9}, {
+   3.868284260501215*^9, 3.868284265252853*^9}, {3.868284311321095*^9, 
+   3.8682843316116734`*^9}, {3.868284486652529*^9, 3.868284516359583*^9}, {
+   3.868284555906272*^9, 3.8682846453609467`*^9}, {3.868284726685966*^9, 
+   3.868284792896998*^9}, {3.868284844790905*^9, 3.868284897533494*^9}, {
+   3.868285006559993*^9, 3.868285014322269*^9}, {3.868285161238945*^9, 
+   3.8682851756388206`*^9}, {3.86828531738626*^9, 3.868285374697328*^9}, {
+   3.868285567214218*^9, 3.868285569397656*^9}, 3.868285603188983*^9, {
+   3.86828568094454*^9, 3.868285851176579*^9}, {3.8682858906151323`*^9, 
+   3.8682860076551037`*^9}, {3.86828604136308*^9, 3.8682860552219954`*^9}, {
+   3.868286090040372*^9, 3.868286126927837*^9}, {3.868286302588146*^9, 
+   3.868286305269107*^9}, {3.868286366210704*^9, 3.868286400493011*^9}, {
+   3.868286450625868*^9, 3.868286505240625*^9}, {3.868286545727365*^9, 
+   3.8682865461101227`*^9}, {3.868286595554144*^9, 3.8682867297455397`*^9}, {
+   3.8682868381757603`*^9, 3.868286875096733*^9}, {3.868287192306943*^9, 
+   3.868287206615343*^9}, {3.868287277567271*^9, 3.868287291644886*^9}, {
+   3.8682873536255827`*^9, 3.8682873540553913`*^9}, {3.868287678955388*^9, 
+   3.868287711859694*^9}, {3.868287835831463*^9, 3.8682878512609997`*^9}, {
+   3.868287892145212*^9, 3.868288028187402*^9}, {3.868288162817152*^9, 
+   3.868288184218371*^9}, {3.868288215187731*^9, 3.868288215611466*^9}, {
+   3.868288261412628*^9, 3.8682882977462683`*^9}, {3.8682883706645107`*^9, 
+   3.868288371033104*^9}, {3.8682884500561533`*^9, 3.868288457310582*^9}, {
+   3.8682884899911947`*^9, 3.868288498000885*^9}, {3.868288692061811*^9, 
+   3.8682887082604027`*^9}, {3.8682887534562063`*^9, 3.868288771046012*^9}, 
+   3.8682888020964212`*^9, {3.868288883785941*^9, 3.868288890345039*^9}, {
+   3.868289230150504*^9, 3.868289322547769*^9}, {3.868289360712234*^9, 
+   3.8682894011341467`*^9}, {3.868289464220022*^9, 3.868289475583144*^9}, {
+   3.868289508481822*^9, 3.868289530083147*^9}, {3.868290285579486*^9, 
+   3.868290288581333*^9}, {3.868290802660281*^9, 3.868290908909902*^9}, {
+   3.868291007349394*^9, 3.868291149083446*^9}, {3.868291181181039*^9, 
+   3.8682911899266253`*^9}, {3.868291274997595*^9, 3.868291280652012*^9}, {
+   3.868291364445019*^9, 3.868291381923612*^9}, {3.868291422037615*^9, 
+   3.8682914226177883`*^9}, {3.868291474377678*^9, 3.8682914758302383`*^9}, {
+   3.868291512038245*^9, 3.868291512308481*^9}, {3.8682915529039793`*^9, 
+   3.868291577799547*^9}, {3.868291715403079*^9, 3.8682917284526033`*^9}, {
+   3.8682921966551933`*^9, 3.8682922677173147`*^9}, {3.868292404606111*^9, 
+   3.8682924171088543`*^9}, {3.868292461720602*^9, 3.868292473537475*^9}, {
+   3.868292548120652*^9, 3.8682925482349453`*^9}, {3.868292586759955*^9, 
+   3.8682926004521103`*^9}, {3.868292717195739*^9, 3.868292752027979*^9}, {
+   3.868292871423086*^9, 3.8682928769212646`*^9}, {3.8682929447986*^9, 
+   3.868293049817937*^9}, {3.868293398063326*^9, 3.868293407407321*^9}, {
+   3.8682935294380617`*^9, 3.868293628658989*^9}, {3.8682938224122677`*^9, 
+   3.868293851723283*^9}, {3.8682940004011803`*^9, 3.868294000443342*^9}, {
+   3.8682940894891376`*^9, 3.868294092161377*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"AffordableFrameChain", "[", 
+     RowBox[{
+     "50", ",", "300", ",", "botWidth", ",", "botType", ",", "legOffset", ",",
+       "x", ",", " ", "legSets", ",", "workspaceLength"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1000"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"botType", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Normal\>\"", ",", "\"\<Brian Mechanism\>\""}], "}"}]}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"botWidth", ",", "100", ",", "1000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"legOffset", ",", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", " ", "False"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"legSets", ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+       "8", ",", "9", ",", "10"}], "}"}]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"workspaceLength", ",", "0", ",", "1600"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.868256322605323*^9, 3.868256341874763*^9}, {
+   3.86825642594193*^9, 3.8682564260608807`*^9}, {3.868263654732176*^9, 
+   3.8682636567195463`*^9}, {3.86826875018463*^9, 3.86826875359372*^9}, {
+   3.868278187146635*^9, 3.868278240172727*^9}, {3.868278344350733*^9, 
+   3.868278378146061*^9}, {3.8682787789935493`*^9, 3.868278779287266*^9}, {
+   3.868282108566647*^9, 3.8682821369055634`*^9}, {3.8682852648456297`*^9, 
+   3.8682852782685213`*^9}, 3.8682860647478943`*^9, {3.8682867488284283`*^9, 
+   3.8682867543347178`*^9}, {3.868287571106702*^9, 3.868287601714622*^9}, {
+   3.8682886554599333`*^9, 3.868288685587708*^9}, {3.8682888987619963`*^9, 
+   3.8682889156096487`*^9}, {3.868289043489622*^9, 3.868289043995571*^9}, {
+   3.868289078432695*^9, 3.86828908205676*^9}, {3.8682891650994997`*^9, 
+   3.868289168749198*^9}, {3.868294625559333*^9, 3.86829462574045*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`botType$$ = 
+    "Normal", $CellContext`botWidth$$ = 267., $CellContext`legOffset$$ = 
+    True, $CellContext`legSets$$ = 1, $CellContext`workspaceLength$$ = 
+    1594., $CellContext`x$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 0, 1000}, {
+      Hold[$CellContext`botType$$], {"Normal", "Brian Mechanism"}}, {
+      Hold[$CellContext`botWidth$$], 100, 1000}, {
+      Hold[$CellContext`legOffset$$], {True, False}}, {
+      Hold[$CellContext`legSets$$], {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
+      Hold[$CellContext`workspaceLength$$], 0, 1600}}, Typeset`size$$ = {
+    1323., {282., 287.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`x$12307$$ = 
+    0, $CellContext`botType$12308$$ = False, $CellContext`botWidth$12309$$ = 
+    0, $CellContext`legOffset$12310$$ = False, $CellContext`legSets$12311$$ = 
+    0, $CellContext`workspaceLength$12312$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`botType$$ = 
+        "Normal", $CellContext`botWidth$$ = 100, $CellContext`legOffset$$ = 
+        True, $CellContext`legSets$$ = 1, $CellContext`workspaceLength$$ = 
+        0, $CellContext`x$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$12307$$, 0], 
+        Hold[$CellContext`botType$$, $CellContext`botType$12308$$, False], 
+        Hold[$CellContext`botWidth$$, $CellContext`botWidth$12309$$, 0], 
+        Hold[$CellContext`legOffset$$, $CellContext`legOffset$12310$$, False], 
+        Hold[$CellContext`legSets$$, $CellContext`legSets$12311$$, 0], 
+        Hold[$CellContext`workspaceLength$$, \
+$CellContext`workspaceLength$12312$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Part[
+        $CellContext`AffordableFrameChain[
+        50, 300, $CellContext`botWidth$$, $CellContext`botType$$, \
+$CellContext`legOffset$$, $CellContext`x$$, $CellContext`legSets$$, \
+$CellContext`workspaceLength$$], 1], 
+      "Specifications" :> {{$CellContext`x$$, 0, 
+         1000}, {$CellContext`botType$$, {
+         "Normal", "Brian Mechanism"}}, {$CellContext`botWidth$$, 100, 
+         1000}, {$CellContext`legOffset$$, {
+         True, False}}, {$CellContext`legSets$$, {1, 2, 3, 4, 5, 6, 7, 8, 9, 
+         10}}, {$CellContext`workspaceLength$$, 0, 1600}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{1370., {387., 394.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.868256080983729*^9, 3.868256295944375*^9, {3.8682563344742126`*^9, 
+   3.8682563426401567`*^9}, 3.868256427005886*^9, 3.868263657462112*^9, 
+   3.868268468030719*^9, 3.8682687808288317`*^9, 3.8682688174025707`*^9, 
+   3.868269141217568*^9, 3.868278176066416*^9, 3.868278215307482*^9, 
+   3.8682782877755947`*^9, {3.868278364000867*^9, 3.868278380363475*^9}, {
+   3.868278659172155*^9, 3.868278662890895*^9}, {3.868278723391862*^9, 
+   3.868278744378772*^9}, {3.868278781666121*^9, 3.8682788177105703`*^9}, {
+   3.868278918258436*^9, 3.868278928376493*^9}, 3.868280101719551*^9, 
+   3.8682816630928917`*^9, 3.86828193046673*^9, {3.868282202259912*^9, 
+   3.86828222903769*^9}, 3.8682823260101*^9, 3.868282388933701*^9, 
+   3.868282448186056*^9, 3.868284233097137*^9, {3.868285208406777*^9, 
+   3.8682852128648767`*^9}, 3.8682852842393093`*^9, {3.8682854745259457`*^9, 
+   3.868285512215603*^9}, 3.8682860669963923`*^9, 3.868286755797624*^9, {
+   3.86828710669279*^9, 3.868287117131098*^9}, {3.868287242002131*^9, 
+   3.868287248366438*^9}, {3.868287299761485*^9, 3.86828730068251*^9}, {
+   3.868287581971251*^9, 3.8682876037929068`*^9}, 3.8682884680483837`*^9, 
+   3.868288641064794*^9, 3.868288716460651*^9, 3.868288782241494*^9, {
+   3.8682888226112757`*^9, 3.8682888266107683`*^9}, {3.868288910981864*^9, 
+   3.868288916543729*^9}, 3.8682890453016653`*^9, 3.8682890834544973`*^9, 
+   3.868289120784532*^9, 3.8682891706900167`*^9, {3.868289548956406*^9, 
+   3.868289559801064*^9}, 3.8682912315390587`*^9, 3.868291771121449*^9, 
+   3.868294564030931*^9, 3.868294626966028*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"11cffdaf-a3c9-4029-92ea-b99ace6ab28f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"AffordableFrameChain", "[", 
+     RowBox[{
+     "50", ",", "300", ",", "botWidth", ",", "botType", ",", "legOffset", ",",
+       "x", ",", " ", "legSets", ",", "workspaceLength"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1000"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"botType", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Normal\>\"", ",", "\"\<Brian Mechanism\>\""}], "}"}]}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"botWidth", ",", "100", ",", "1000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"legOffset", ",", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", " ", "False"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"legSets", ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+       "8", ",", "9", ",", "10"}], "}"}]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"workspaceLength", ",", "0", ",", "1200"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.868291221151401*^9, 3.868291221599164*^9}},
+ CellLabel->
+  "In[257]:=",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`botType$$ = "Normal", 
+    CloudObject`Private`botWidth$$ = 100, $CellContext`legOffset$$ = True, 
+    CloudObject`Private`legSets$$ = 1, $CellContext`workspaceLength$$ = 
+    0, $CellContext`x$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 0, 1000}, {
+      Hold[$CellContext`botType$$], {"Normal", "Brian Mechanism"}}, {
+      Hold[CloudObject`Private`botWidth$$], 100, 1000}, {
+      Hold[$CellContext`legOffset$$], {True, False}}, {
+      Hold[CloudObject`Private`legSets$$], {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
+     
+      Hold[$CellContext`workspaceLength$$], 0, 1200}}, Typeset`size$$ = {
+    360., {109., 116.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`x$126131$$ = 
+    0, $CellContext`botType$126132$$ = False, 
+    CloudObject`Private`botWidth$126133$$ = 
+    0, $CellContext`legOffset$126134$$ = False, 
+    CloudObject`Private`legSets$126135$$ = 
+    0, $CellContext`workspaceLength$126136$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`botType$$ = "Normal", 
+        CloudObject`Private`botWidth$$ = 100, $CellContext`legOffset$$ = True,
+         CloudObject`Private`legSets$$ = 1, $CellContext`workspaceLength$$ = 
+        0, $CellContext`x$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$126131$$, 0], 
+        Hold[$CellContext`botType$$, $CellContext`botType$126132$$, False], 
+        Hold[
+        CloudObject`Private`botWidth$$, CloudObject`Private`botWidth$126133$$,
+          0], 
+        Hold[$CellContext`legOffset$$, $CellContext`legOffset$126134$$, 
+         False], 
+        Hold[
+        CloudObject`Private`legSets$$, CloudObject`Private`legSets$126135$$, 
+         0], 
+        Hold[$CellContext`workspaceLength$$, \
+$CellContext`workspaceLength$126136$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Part[
+        $CellContext`AffordableFrameChain[
+        50, 300, 
+         CloudObject`Private`botWidth$$, $CellContext`botType$$, \
+$CellContext`legOffset$$, $CellContext`x$$, 
+         CloudObject`Private`legSets$$, $CellContext`workspaceLength$$], 1], 
+      "Specifications" :> {{$CellContext`x$$, 0, 
+         1000}, {$CellContext`botType$$, {"Normal", "Brian Mechanism"}}, {
+        CloudObject`Private`botWidth$$, 100, 
+         1000}, {$CellContext`legOffset$$, {True, False}}, {
+        CloudObject`Private`legSets$$, {1, 2, 3, 4, 5, 6, 7, 8, 9, 
+         10}}, {$CellContext`workspaceLength$$, 0, 1200}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{407., {215., 222.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.868281451187501*^9, 3.868281466354506*^9}, 
+   3.86828151799438*^9, 3.8682816572138233`*^9, {3.868281921748063*^9, 
+   3.8682819259847927`*^9}, 3.868282067907938*^9, 3.868291223678178*^9},
+ CellLabel->
+  "Out[257]=",ExpressionUUID->"ba8e9a2f-7eed-418a-b39d-8f74677d3955"]
 }, Open  ]]
 },
 WindowSize->{1528, 836},
@@ -597,10 +1863,19 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 229, 6, 60, "Text",ExpressionUUID->"25ede1f9-75b8-4c67-8132-492ce45705cb"],
-Cell[790, 28, 19488, 402, 1460, "Input",ExpressionUUID->"c8479fa7-0219-4a37-bff5-ef14bed4f857"],
+Cell[790, 28, 21637, 447, 1575, "Input",ExpressionUUID->"c8479fa7-0219-4a37-bff5-ef14bed4f857"],
 Cell[CellGroupData[{
-Cell[20303, 434, 2472, 59, 124, "Input",ExpressionUUID->"db47d516-15d6-46b5-a310-0fb3e98c92e2"],
-Cell[22778, 495, 4713, 84, 614, "Output",ExpressionUUID->"82aab2fa-8103-4399-9268-5d1a99f30d6a"]
+Cell[22452, 479, 2913, 67, 124, "Input",ExpressionUUID->"db47d516-15d6-46b5-a310-0fb3e98c92e2"],
+Cell[25368, 548, 5439, 97, 322, "Output",ExpressionUUID->"08679a46-3d61-4ad0-a449-a2c58f13ee15"]
+}, Open  ]],
+Cell[30822, 648, 44545, 950, 3712, "Input",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
+Cell[CellGroupData[{
+Cell[75392, 1602, 2050, 43, 55, "Input",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
+Cell[77445, 1647, 4958, 84, 833, "Output",ExpressionUUID->"11cffdaf-a3c9-4029-92ea-b99ace6ab28f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82440, 1736, 1232, 33, 55, "Input",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"],
+Cell[83675, 1771, 3770, 74, 456, "Output",ExpressionUUID->"ba8e9a2f-7eed-418a-b39d-8f74677d3955"]
 }, Open  ]]
 }
 ]
