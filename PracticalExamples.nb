@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     88948,       1883]
-NotebookOptionsPosition[     87783,       1856]
-NotebookOutlinePosition[     88116,       1871]
-CellTagsIndexPosition[     88073,       1868]
+NotebookDataLength[     85654,       1810]
+NotebookOptionsPosition[     84620,       1786]
+NotebookOutlinePosition[     84953,       1801]
+CellTagsIndexPosition[     84910,       1798]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -473,7 +473,7 @@ Cell[BoxData[
    3.8682540420515747`*^9}, {3.8682540853799267`*^9, 3.868254151161433*^9}, {
    3.868254213324233*^9, 3.868254252475101*^9}, {3.868254336090461*^9, 
    3.868254336620448*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"c8479fa7-0219-4a37-bff5-ef14bed4f857"],
+ CellLabel->"In[4]:=",ExpressionUUID->"c8479fa7-0219-4a37-bff5-ef14bed4f857"],
 
 Cell[CellGroupData[{
 
@@ -552,7 +552,7 @@ Cell[BoxData[
    DynamicModuleBox[{CloudObject`Private`botType$$ = 
     "fixed", $CellContext`Lcc$$ = 30, $CellContext`nn$$ = 5, 
     CloudObject`Private`overhanging$$ = False, $CellContext`rail$$ = 
-    True, $CellContext`savematerial$$ = False, $CellContext`stable$$ = True, 
+    False, $CellContext`savematerial$$ = True, $CellContext`stable$$ = True, 
     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
@@ -563,7 +563,7 @@ Cell[BoxData[
       Hold[$CellContext`rail$$], {True, False}}, {
       Hold[$CellContext`stable$$], {False, True}}, {
       Hold[CloudObject`Private`overhanging$$], {False, True}}}, 
-    Typeset`size$$ = {374., {41., 48.}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {941., {387., 394.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
     False, $CellContext`Lcc$44557$$ = 0, $CellContext`nn$44558$$ = 0, 
     CloudObject`Private`botType$44559$$ = 
@@ -613,7 +613,7 @@ Cell[BoxData[
          True, False}}, {$CellContext`stable$$, {False, True}}, {
         CloudObject`Private`overhanging$$, {False, True}}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{421., {148., 155.}},
+     ImageSizeCache->{988., {494., 501.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -642,7 +642,9 @@ Cell[BoxData[
    3.868252520788156*^9}, 3.868252885104067*^9, 3.868252966379874*^9, {
    3.8682530170722427`*^9, 3.8682530356811666`*^9}, 3.868253538267823*^9, 
    3.8682540494899817`*^9, {3.868254156889161*^9, 3.868254184301401*^9}, {
-   3.8682574390232267`*^9, 3.8682574416495543`*^9}},
+   3.8682574390232267`*^9, 3.8682574416495543`*^9}, {3.868333129798601*^9, 
+   3.868333160453102*^9}, 3.868333289600988*^9, {3.868343117609898*^9, 
+   3.868343170427742*^9}, {3.86834320741387*^9, 3.868343221011085*^9}},
  CellLabel->"Out[46]=",ExpressionUUID->"08679a46-3d61-4ad0-a449-a2c58f13ee15"]
 }, Open  ]],
 
@@ -1508,9 +1510,10 @@ Cell[BoxData[{
                RowBox[{"workspaceLength", ",", "0", ",", "0"}], "}"}]}], 
              "}"}], "]"}], "}"}]}], "]"}], ",", 
         RowBox[{"{", 
-         RowBox[{"Axes", "\[Rule]", "True"}], "}"}]}], "\[IndentingNewLine]", 
-       "]"}]}], "\[IndentingNewLine]", "}"}]}], 
-   "]"}]}], "\[IndentingNewLine]"}], "Input",
+         RowBox[{"Axes", "\[Rule]", "False"}], "}"}], ",", 
+        RowBox[{"Boxed", "->", "False"}]}], "\[IndentingNewLine]", "]"}]}], 
+     "\[IndentingNewLine]", "}"}]}], "]"}]}], "\[IndentingNewLine]"}], "Input",\
+
  CellChangeTimes->{{3.868255111890033*^9, 3.868255844258963*^9}, {
    3.868255885571148*^9, 3.868256008136121*^9}, {3.8682560600519543`*^9, 
    3.8682561073155737`*^9}, {3.868256241595703*^9, 3.868256316528858*^9}, {
@@ -1602,8 +1605,9 @@ Cell[BoxData[{
    3.8682935294380617`*^9, 3.868293628658989*^9}, {3.8682938224122677`*^9, 
    3.868293851723283*^9}, {3.8682940004011803`*^9, 3.868294000443342*^9}, {
    3.8682940894891376`*^9, 3.868294092161377*^9}, {3.868296135859015*^9, 
-   3.8682961434783087`*^9}},ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-\
-e00bc81a8984"],
+   3.8682961434783087`*^9}, {3.868337619059156*^9, 3.8683376217329597`*^9}, {
+   3.868337835493093*^9, 3.868337836204068*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
 
 Cell[CellGroupData[{
 
@@ -1649,17 +1653,18 @@ Cell[BoxData[
    3.8682886554599333`*^9, 3.868288685587708*^9}, {3.8682888987619963`*^9, 
    3.8682889156096487`*^9}, {3.868289043489622*^9, 3.868289043995571*^9}, {
    3.868289078432695*^9, 3.86828908205676*^9}, {3.8682891650994997`*^9, 
-   3.868289168749198*^9}, {3.868294625559333*^9, 3.86829462574045*^9}},
- CellLabel->"In[3]:=",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
+   3.868289168749198*^9}, {3.868294625559333*^9, 3.86829462574045*^9}, {
+   3.8683375580737877`*^9, 3.868337612816827*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`botType$$ = 
     "Brian Mechanism", $CellContext`botWidth$$ = 
-    267., $CellContext`legOffset$$ = True, $CellContext`legSets$$ = 
-    2, $CellContext`workspaceLength$$ = 1594., $CellContext`x$$ = 
-    477.1324447631836, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    142., $CellContext`legOffset$$ = True, $CellContext`legSets$$ = 
+    6, $CellContext`workspaceLength$$ = 1586., $CellContext`x$$ = 
+    726.7638117969135, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`x$$], 0, 1000}, {
@@ -1668,24 +1673,25 @@ Cell[BoxData[
       Hold[$CellContext`legOffset$$], {True, False}}, {
       Hold[$CellContext`legSets$$], {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
       Hold[$CellContext`workspaceLength$$], 0, 1600}}, Typeset`size$$ = {
-    1323., {282., 289.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`x$12307$$ = 
-    0, $CellContext`botType$12308$$ = False, $CellContext`botWidth$12309$$ = 
-    0, $CellContext`legOffset$12310$$ = False, $CellContext`legSets$12311$$ = 
-    0, $CellContext`workspaceLength$12312$$ = 0}, 
+    1051., {217., 223.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`x$2600$$ = 
+    0, $CellContext`botType$2605$$ = False, $CellContext`botWidth$2606$$ = 
+    0, $CellContext`legOffset$2607$$ = False, $CellContext`legSets$2608$$ = 
+    0, $CellContext`workspaceLength$2609$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`botType$$ = 
         "Normal", $CellContext`botWidth$$ = 100, $CellContext`legOffset$$ = 
         True, $CellContext`legSets$$ = 1, $CellContext`workspaceLength$$ = 
         0, $CellContext`x$$ = 0}, "ControllerVariables" :> {
-        Hold[$CellContext`x$$, $CellContext`x$12307$$, 0], 
-        Hold[$CellContext`botType$$, $CellContext`botType$12308$$, False], 
-        Hold[$CellContext`botWidth$$, $CellContext`botWidth$12309$$, 0], 
-        Hold[$CellContext`legOffset$$, $CellContext`legOffset$12310$$, False], 
-        Hold[$CellContext`legSets$$, $CellContext`legSets$12311$$, 0], 
+        Hold[$CellContext`x$$, $CellContext`x$2600$$, 0], 
+        Hold[$CellContext`botType$$, $CellContext`botType$2605$$, False], 
+        Hold[$CellContext`botWidth$$, $CellContext`botWidth$2606$$, 0], 
+        Hold[$CellContext`legOffset$$, $CellContext`legOffset$2607$$, False], 
+        
+        Hold[$CellContext`legSets$$, $CellContext`legSets$2608$$, 0], 
         Hold[$CellContext`workspaceLength$$, \
-$CellContext`workspaceLength$12312$$, 0]}, 
+$CellContext`workspaceLength$2609$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -1702,7 +1708,7 @@ $CellContext`workspaceLength$$], 1],
          True, False}}, {$CellContext`legSets$$, {1, 2, 3, 4, 5, 6, 7, 8, 9, 
          10}}, {$CellContext`workspaceLength$$, 0, 1600}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{1370., {399., 406.}},
+     ImageSizeCache->{1098., {333., 340.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1736,123 +1742,47 @@ $CellContext`workspaceLength$$], 1],
    3.868289120784532*^9, 3.8682891706900167`*^9, {3.868289548956406*^9, 
    3.868289559801064*^9}, 3.8682912315390587`*^9, 3.868291771121449*^9, 
    3.868294564030931*^9, 3.868294626966028*^9, {3.868294677783949*^9, 
-   3.8682946972817497`*^9}},
- CellLabel->"Out[3]=",ExpressionUUID->"11cffdaf-a3c9-4029-92ea-b99ace6ab28f"]
+   3.8682946972817497`*^9}, 3.868337489943183*^9, 3.868337569946226*^9, 
+   3.868337627121636*^9, 3.868337706800387*^9, 3.868337770266996*^9, {
+   3.868343277698578*^9, 3.8683432793941183`*^9}},
+ CellLabel->"Out[4]=",ExpressionUUID->"e28c4637-2347-40dc-9fcb-42f5117be103"]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"Manipulate", "[", 
-  RowBox[{
+ RowBox[{"(*", 
+  RowBox[{"Manipulate", "[", 
    RowBox[{
-    RowBox[{"AffordableFrameChain", "[", 
-     RowBox[{
-     "50", ",", "300", ",", "botWidth", ",", "botType", ",", "legOffset", ",",
-       "x", ",", " ", "legSets", ",", "workspaceLength"}], "]"}], "[", 
-    RowBox[{"[", "1", "]"}], "]"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"x", ",", "0", ",", "1000"}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"botType", ",", 
-     RowBox[{"{", 
-      RowBox[{"\"\<Normal\>\"", ",", "\"\<Brian Mechanism\>\""}], "}"}]}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"botWidth", ",", "100", ",", "1000"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"legOffset", ",", 
-     RowBox[{"{", 
-      RowBox[{"True", ",", " ", "False"}], "}"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"legSets", ",", 
-     RowBox[{"{", 
+    RowBox[{
+     RowBox[{"AffordableFrameChain", "[", 
       RowBox[{
-      "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
-       "8", ",", "9", ",", "10"}], "}"}]}], "}"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"workspaceLength", ",", "0", ",", "1200"}], "}"}]}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.868291221151401*^9, 3.868291221599164*^9}},
- CellLabel->
-  "In[257]:=",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"],
-
-Cell[BoxData[
- TagBox[
-  StyleBox[
-   DynamicModuleBox[{$CellContext`botType$$ = "Normal", 
-    CloudObject`Private`botWidth$$ = 100, $CellContext`legOffset$$ = True, 
-    CloudObject`Private`legSets$$ = 1, $CellContext`workspaceLength$$ = 
-    0, $CellContext`x$$ = 0, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`x$$], 0, 1000}, {
-      Hold[$CellContext`botType$$], {"Normal", "Brian Mechanism"}}, {
-      Hold[CloudObject`Private`botWidth$$], 100, 1000}, {
-      Hold[$CellContext`legOffset$$], {True, False}}, {
-      Hold[CloudObject`Private`legSets$$], {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
-     
-      Hold[$CellContext`workspaceLength$$], 0, 1200}}, Typeset`size$$ = {
-    360., {109., 116.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`x$126131$$ = 
-    0, $CellContext`botType$126132$$ = False, 
-    CloudObject`Private`botWidth$126133$$ = 
-    0, $CellContext`legOffset$126134$$ = False, 
-    CloudObject`Private`legSets$126135$$ = 
-    0, $CellContext`workspaceLength$126136$$ = 0}, 
-    DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, 
-      "Variables" :> {$CellContext`botType$$ = "Normal", 
-        CloudObject`Private`botWidth$$ = 100, $CellContext`legOffset$$ = True,
-         CloudObject`Private`legSets$$ = 1, $CellContext`workspaceLength$$ = 
-        0, $CellContext`x$$ = 0}, "ControllerVariables" :> {
-        Hold[$CellContext`x$$, $CellContext`x$126131$$, 0], 
-        Hold[$CellContext`botType$$, $CellContext`botType$126132$$, False], 
-        Hold[
-        CloudObject`Private`botWidth$$, CloudObject`Private`botWidth$126133$$,
-          0], 
-        Hold[$CellContext`legOffset$$, $CellContext`legOffset$126134$$, 
-         False], 
-        Hold[
-        CloudObject`Private`legSets$$, CloudObject`Private`legSets$126135$$, 
-         0], 
-        Hold[$CellContext`workspaceLength$$, \
-$CellContext`workspaceLength$126136$$, 0]}, 
-      "OtherVariables" :> {
-       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
-        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
-        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, "Body" :> Part[
-        $CellContext`AffordableFrameChain[
-        50, 300, 
-         CloudObject`Private`botWidth$$, $CellContext`botType$$, \
-$CellContext`legOffset$$, $CellContext`x$$, 
-         CloudObject`Private`legSets$$, $CellContext`workspaceLength$$], 1], 
-      "Specifications" :> {{$CellContext`x$$, 0, 
-         1000}, {$CellContext`botType$$, {"Normal", "Brian Mechanism"}}, {
-        CloudObject`Private`botWidth$$, 100, 
-         1000}, {$CellContext`legOffset$$, {True, False}}, {
-        CloudObject`Private`legSets$$, {1, 2, 3, 4, 5, 6, 7, 8, 9, 
-         10}}, {$CellContext`workspaceLength$$, 0, 1200}}, "Options" :> {}, 
-      "DefaultOptions" :> {}],
-     ImageSizeCache->{407., {215., 222.}},
-     SingleEvaluation->True],
-    Deinitialization:>None,
-    DynamicModuleValues:>{},
-    SynchronousInitialization->True,
-    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
-    UnsavedVariables:>{Typeset`initDone$$},
-    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
-   Deployed->True,
-   StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{{3.868281451187501*^9, 3.868281466354506*^9}, 
-   3.86828151799438*^9, 3.8682816572138233`*^9, {3.868281921748063*^9, 
-   3.8682819259847927`*^9}, 3.868282067907938*^9, 3.868291223678178*^9},
- CellLabel->
-  "Out[257]=",ExpressionUUID->"ba8e9a2f-7eed-418a-b39d-8f74677d3955"]
-}, Open  ]]
+      "50", ",", "300", ",", "botWidth", ",", "botType", ",", "legOffset", 
+       ",", "x", ",", " ", "legSets", ",", "workspaceLength"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "1000"}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"botType", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Normal\>\"", ",", "\"\<Brian Mechanism\>\""}], "}"}]}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"botWidth", ",", "100", ",", "1000"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"legOffset", ",", 
+      RowBox[{"{", 
+       RowBox[{"True", ",", " ", "False"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"legSets", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+        "8", ",", "9", ",", "10"}], "}"}]}], "}"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"workspaceLength", ",", "0", ",", "1200"}], "}"}]}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.868291221151401*^9, 3.868291221599164*^9}, {
+  3.868337693551591*^9, 3.86833769631489*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"]
 },
 WindowSize->{1528, 836},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
@@ -1874,17 +1804,14 @@ Cell[558, 20, 229, 6, 60, "Text",ExpressionUUID->"25ede1f9-75b8-4c67-8132-492ce4
 Cell[790, 28, 21637, 447, 1575, "Input",ExpressionUUID->"c8479fa7-0219-4a37-bff5-ef14bed4f857"],
 Cell[CellGroupData[{
 Cell[22452, 479, 2913, 67, 124, "Input",ExpressionUUID->"db47d516-15d6-46b5-a310-0fb3e98c92e2"],
-Cell[25368, 548, 5439, 97, 322, "Output",ExpressionUUID->"08679a46-3d61-4ad0-a449-a2c58f13ee15"]
+Cell[25368, 548, 5608, 99, 1014, "Output",ExpressionUUID->"08679a46-3d61-4ad0-a449-a2c58f13ee15"]
 }, Open  ]],
-Cell[30822, 648, 44790, 957, 3743, "Input",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
+Cell[30991, 650, 44954, 959, 3743, "Input",ExpressionUUID->"66c6b7ab-531b-40d9-b1a9-e00bc81a8984"],
 Cell[CellGroupData[{
-Cell[75637, 1609, 2050, 43, 55, "Input",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
-Cell[77690, 1654, 5035, 85, 824, "Output",ExpressionUUID->"11cffdaf-a3c9-4029-92ea-b99ace6ab28f"]
+Cell[75970, 1613, 2102, 44, 55, "Input",ExpressionUUID->"81f28303-eea9-4064-a55c-4baeb948daf9"],
+Cell[78075, 1659, 5198, 88, 692, "Output",ExpressionUUID->"e28c4637-2347-40dc-9fcb-42f5117be103"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[82762, 1744, 1232, 33, 55, "Input",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"],
-Cell[83997, 1779, 3770, 74, 456, "Output",ExpressionUUID->"ba8e9a2f-7eed-418a-b39d-8f74677d3955"]
-}, Open  ]]
+Cell[83288, 1750, 1328, 34, 55, "Input",ExpressionUUID->"91049f3e-e5da-41b6-a9cd-34f069e0d818"]
 }
 ]
 *)
